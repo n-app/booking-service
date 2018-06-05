@@ -1,5 +1,5 @@
 const data = [
-  'testing',
+  'test2',
 ];
 
 export default data;

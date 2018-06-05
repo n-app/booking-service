@@ -117,7 +117,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar data = ['testing'];\n\nexports.default = data;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jbGllbnQvc3JjL2Zha2UtZGF0YS9kYXRhLmpzeC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9jbGllbnQvc3JjL2Zha2UtZGF0YS9kYXRhLmpzeD82MjY2Il0sInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGRhdGEgPSBbXG4gICd0ZXN0aW5nJyxcbl07XG5cbmV4cG9ydCBkZWZhdWx0IGRhdGE7XG4iXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUE7QUFDQTtBQUdBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./client/src/fake-data/data.jsx\n");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar data = ['test2'];\n\nexports.default = data;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jbGllbnQvc3JjL2Zha2UtZGF0YS9kYXRhLmpzeC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9jbGllbnQvc3JjL2Zha2UtZGF0YS9kYXRhLmpzeD82MjY2Il0sInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGRhdGEgPSBbXG4gICd0ZXN0MicsXG5dO1xuXG5leHBvcnQgZGVmYXVsdCBkYXRhO1xuIl0sIm1hcHBpbmdzIjoiOzs7OztBQUFBO0FBQ0E7QUFHQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./client/src/fake-data/data.jsx\n");
 
 /***/ }),
 
