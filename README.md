@@ -16,8 +16,11 @@
 1. [Development](#development)
 
 ## Usage
-
-> Usage instructions will be added here
+### Add database and tables to mysql:
+> In the terminal:
+> run `mysql.server start` if not already started.
+> run `mysql -u root < './database/schema.sql'`
+> you may need to run `mysql -u username -p < './database/schema.sql'` if a username or password has been set.
 
 ## Requirements
 

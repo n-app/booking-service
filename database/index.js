@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const debug = require('debug')('app:db');
+const debug = require('debug')('app:*');
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -15,11 +15,11 @@ connection.connect((err) => {
   debug('connected to database...');
 });
 
-const insertData = (sql, data) => {
-  connection.query(sql, [data]);
+const insertMockData = (sql, data) => {
+  connection.query(sql, data);
 };
 
 module.exports = {
   connection,
-  insertData,
+  insertMockData,
 };

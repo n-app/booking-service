@@ -25,21 +25,11 @@ DROP TABLE IF EXISTS listings;
 CREATE TABLE listings (
   id INT NOT NULL AUTO_INCREMENT,
   owner_id INT NOT NULL,
+  maxGuests INT NOT NULL,
   price INT NOT NULL,
   minStay INT NOT NULL,
-  maxGuests INT NOT NULL,
   cleaningFee INT NOT NULL,
   areaTax INT NOT NULL,
-  userViews INT NOT NULL,
-  oftenBooked INT NOT NULL,
-  PRIMARY KEY (id)
-);
-
-DROP TABLE IF EXISTS days;
-
-CREATE TABLE days (
-  id INT NOT NULL AUTO_INCREMENT,
-  calendarDate DATE NOT NULL,
   PRIMARY KEY (id)
 );
 
