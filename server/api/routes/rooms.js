@@ -7,11 +7,11 @@ const router = express.Router();
 router.get('/:id', (req, res, next) => {
   let { id } = req.params;
   id -= 1000 - 1;
-  debug(`ID: ${id}`)
+  debug(`ID: ${id}`);
 
-  db.queryBookingsByRoomId(id, (error, results) => {
+  db.queryAllDbTablesByRoomId(id, (error, results) => {
     if (error) {
-      debug(error);
+      debug(error[0]);
     } else {
       debug(results);
       res.status(200).json({
@@ -19,13 +19,6 @@ router.get('/:id', (req, res, next) => {
       });
     }
   });
-
-  //make call to db.queryRoomInfoById
-
-  // debug(`GET room id: ${id}`);
-  // res.status(200).json({
-  //   message: `room ${id} fetched`,
-  // });
 });
 
 module.exports = router;

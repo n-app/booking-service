@@ -27,81 +27,87 @@ const insertIntoDB = (sql, values, callback) => {
   });
 };
 
-/*
-listings
-owners
-reviews
-bookings
-*/
-
-const queryListingInfoByRoomId = (id, callback) => {
-  const idWrap = [];
-  idWrap.push(id);
-  connection.query('SELECT * FROM listings WHERE id = ?', idWrap, (err, rows) => {
+const queryListingInfoByRoomId = (id, name = 'listing', callback) => {
+  connection.query('SELECT * FROM listings WHERE id = ?', id, (err, rows) => {
     if (err) {
-      callback(err, null);
+      callback(err, null, name);
     } else {
       debug(rows[0]);
-      callback(null, rows);
+      callback(null, rows, name);
     }
   });
 };
 
-const queryOwnerInfoByRoomId = (id, callback) => {
-  const idWrap = [];
-  idWrap.push(id);
-  connection.query('SELECT * FROM owners WHERE id = ?', idWrap, (err, rows) => {
+const queryOwnerInfoByRoomId = (id, name = 'owner', callback) => {
+  connection.query('SELECT * FROM owners WHERE id = ?', id, (err, rows) => {
     if (err) {
-      callback(err, null);
+      callback(err, null, name);
     } else {
       debug(rows[0]);
-      callback(null, rows);
+      callback(null, rows, name);
     }
   });
 };
 
-const queryListingReviewsByRoomId = (id, callback) => {
-  const idWrap = [];
-  idWrap.push(id);
-  connection.query('SELECT COUNT(*) as totalReviews, SUM(rating) as starSum FROM reviews WHERE listing_id = ?', idWrap, (err, rows) => {
+const queryListingReviewsByRoomId = (id, name = 'reviews', callback) => {
+  connection.query('SELECT COUNT(*) as totalReviews, SUM(rating) as starSum FROM reviews WHERE listing_id = ?', id, (err, rows) => {
     if (err) {
-      callback(err, null);
+      callback(err, null, name);
     } else {
       debug(rows[0]);
-      callback(null, rows);
+      callback(null, rows, name);
     }
   });
 };
 
-const queryBookingsByRoomId = (id, callback) => {
-  const idWrap = [];
-  idWrap.push(id);
-  connection.query('SELECT * FROM bookings WHERE listing_id = ?', idWrap, (err, rows) => {
+const queryBookingsByRoomId = (id, name = 'bookings', callback) => {
+  connection.query('SELECT * FROM bookings WHERE listing_id = ?', id, (err, rows) => {
     if (err) {
-      callback(err, null);
+      callback(err, null, name);
     } else {
       debug(rows[0]);
-      callback(null, rows);
+      callback(null, rows, name);
     }
   });
 };
-
-//function --> if there is an error, send partial retrieval of data?
-
-const trackQueryHelper = (err, data, recordObj, queriesCompleted)
 
 const queryAllDbTablesByRoomId = (id, callback) => {
-  let queriesComplete = 0;
+  const READ_DB_OPERATIONS = 4;
   const roomRecords = {};
+  const errorLog = [];
+  const idWrap = [];
+  let queriesComplete = 0;
+  idWrap.push(id);
 
-  const trackQueryHelper
+  const trackQueryHelper = (error, data, name) => {
+    queriesComplete += 1;
+    if (error) {
+      //will need to send responses here?
+      debug(`error reading from database, step: ${queriesComplete}, error: ${error}`);
+      errorLog.push({ name, error });
+    } else {
+      roomRecords[name] = data;
+    }
 
-  //call each of our query helper functions,
-  //their callbacks will be another helper function, that keeps track of completed queries,
+    if (queriesComplete === READ_DB_OPERATIONS) {
+      if (errorLog.length === READ_DB_OPERATIONS) {
+        //need to find a better way of handling errors
+        callback(errorLog, null);
+      } else {
+        roomRecords.errors = errorLog;
+        callback(null, roomRecords);
+      }
+    }
+  };
+
+  queryListingInfoByRoomId(idWrap, 'listing', trackQueryHelper);
+  queryOwnerInfoByRoomId(idWrap, 'owner', trackQueryHelper);
+  queryListingReviewsByRoomId(idWrap, 'reviews', trackQueryHelper);
+  queryBookingsByRoomId(idWrap, 'bookings', trackQueryHelper);
 };
 
 module.exports = {
   connection,
   insertIntoDB,
-  queryBookingsByRoomId,
+  queryAllDbTablesByRoomId,
 };
