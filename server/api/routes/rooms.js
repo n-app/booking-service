@@ -1,14 +1,31 @@
 const express = require('express');
-const routesDebug = require('debug')('app:routes');
+const db = require('../../../database/index');
+const debug = require('debug')('app:*');
 
 const router = express.Router();
 
 router.get('/:id', (req, res, next) => {
-  const { id } = req.params;
-  routesDebug(`GET room id: ${id}`);
-  res.status(200).json({
-    message: `room ${id} fetched`,
+  let { id } = req.params;
+  id -= 1000 - 1;
+  debug(`ID: ${id}`)
+
+  db.queryBookingsByRoomId(id, (error, results) => {
+    if (error) {
+      debug(error);
+    } else {
+      debug(results);
+      res.status(200).json({
+        data: results,
+      });
+    }
   });
+
+  //make call to db.queryRoomInfoById
+
+  // debug(`GET room id: ${id}`);
+  // res.status(200).json({
+  //   message: `room ${id} fetched`,
+  // });
 });
 
 module.exports = router;
