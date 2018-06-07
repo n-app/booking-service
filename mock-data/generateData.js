@@ -8,6 +8,7 @@ const moment = MomentRange.extendMoment(Moment);
 const LISTINGS_DEFAULT = 100;
 const OWNERS_DEFAULT = 100;
 const USERS_DEFAULT = 755;
+const MAX_REVIEWS_DEFAULT = 350;
 const MIN_STAY_DEFAULT = 2;
 const MAX_STAY_DEFAULT = 11;
 
@@ -26,7 +27,6 @@ const addMockBookings = (listingID, momentRange, users) => {
   let count = 0;
   let daysAway = 0;
   let reduced = 0;
-
   for (const day of momentRange.by('day')) {
     count = available ? count : count += 1;
     if (!available && count === prevBookingDuration) {
@@ -58,23 +58,32 @@ const generateAllBookings = (listings = LISTINGS_DEFAULT, users = USERS_DEFAULT)
   return allListingBookings.reduce((a, b) => a.concat(b), []);
 };
 
-const generateFirstName = (users) => {
+const generateFirstName = (users = OWNERS_DEFAULT) => {
   const accounts = [];
   for (let i = 1; i <= users; i += 1) {
-    accounts.push(chance.first());
+    const user = chance.first();
+    let double = "";
+    user.split('').forEach((char) => {
+      double += char;
+    });
+    accounts.push(double);
   }
   return accounts;
 };
 
 const createReview = (listingID) => {
+  const review = [];
   const rating = chance.integer({ min: 0, max: 5 });
-  return [rating, listingID];
+  review.push(rating);
+  review.push(listingID);
+  return review;
 };
 
-const generateAllReviews = (listings = LISTINGS_DEFAULT, maxReviews = USERS_DEFAULT) => {
+const generateAllReviews = (listings = LISTINGS_DEFAULT, maxReviews = MAX_REVIEWS_DEFAULT) => {
   const allListingReviews = [];
   for (let i = 1; i <= listings; i += 1) {
     const numOfListingReviews = chance.integer({ min: 1, max: maxReviews });
+    console.log(numOfListingReviews);
     const currentListingID = i;
     for (let j = 0; j < numOfListingReviews; j += 1) {
       allListingReviews.push(createReview(currentListingID));

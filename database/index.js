@@ -7,19 +7,27 @@ const connection = mysql.createConnection({
   database: 'booking_service',
 });
 
-connection.connect((err) => {
-  if (err) {
-    debug(`error connecting to db: ${err}`);
+connection.connect((error) => {
+  if (error) {
+    debug(`Error connecting to db, error code: ${error.code}`);
     return;
   }
   debug('connected to database...');
 });
 
-const insertMockData = (sql, data) => {
-  connection.query(sql, data);
+const insertIntoDB = (sql, values, callback) => {
+  const bulkArr = [];
+  bulkArr.push(values);
+  connection.query(sql, bulkArr, (error, results, fields) => {
+    if (error) {
+      callback(error, null);
+    } else {
+      callback(null, results);
+    }
+  });
 };
 
 module.exports = {
   connection,
-  insertMockData,
+  insertIntoDB,
 };
