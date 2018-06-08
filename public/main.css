@@ -1,4 +1,423 @@
-.test {
-  margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #484848;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+div {
+  display: block;
+}
+
+/*
+---------------- BUTTON CSS ----------------
+*/
+
+.btn-link, input, textarea, select, button, a {
+  font-weight: inherit;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, input {
+  line-height: normal;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+*, *:before, *:after, hr, hr:before, hr:after, input[type="search"], input[type="search"]:before, input[type="search"]:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-style: solid;
+  border-width: 1px;
+  padding: 1px 7px 2px;
+}
+
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  color: buttontext;
+  background-color: buttonface;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
+}
+
+input, textarea, select, button {
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em;
+  font: 400 11px system-ui;
+}
+
+input, textarea, select, button, meter, progress {
+  -webkit-writing-mode: horizontal-tb;
+}
+
+button {
+  -webkit-appearance: button;
+}
+
+/*
+---------------- LABEL CSS ----------------
+*/
+
+label, input, textarea, select, input[type="radio"], input[type="checkbox"], .input-prefix, .input-suffix {
+  line-height: normal;
+}
+
+label {
+  cursor: default;
+}
+
+/*
+---------------- component positioning and styling ----------------
+*/
+
+.position-app {
+  position: fixed;
+  top: 75px;
+  margin-left: 45px;
+  width: 376px;
+  z-index: 3;
+}
+
+.container-app {
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0px;
+  border: 1px solid #e4e4e4;
+  background-color: #ffffff;
+}
+
+.app-parent {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.booking-header-parent {
+
+}
+
+.booking-form-parent {
+
+}
+
+.booking-footer-parent {
+
+}
+
+/*
+---------------- BOOKING HEADER SECTION ----------------
+*/
+
+.header-text {
+  line-height: 10px;
+}
+
+.header-text div {
+  display: inline-block;
+}
+
+.header-cost-text {
+  word-wrap: break-word;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  font-size: 19px;
+  line-height: 26px;
+  letter-spacing: normal;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: rgb(72, 72, 72);
+  font-weight: 800;
+  display: inline;
+  margin: 0px;
+}
+
+.header-per-night {
+  font-weight: 600;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: normal;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  display: inline;
+}
+
+.header-reviews-summary {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  vertical-align: bottom;
+}
+
+.rating-star-single {
+  display: inline-block;
+  color: #008489;
+  font-size: 9px;
+  height: 10px;
+  margin-right: 1px;
+  width: 9px;
+}
+
+.rating-total-text {
+  font-weight: 600;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: normal;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  display: inline;
+}
+
+.header-line-break {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.header-line-break div {
+  border-bottom: 1px solid #DBDBDB;
+}
+
+/*
+---------------- BOOKING HEADER SECTION ----------------
+*/
+
+#booking-form {
+
+}
+
+.form-fields-container{
+
+}
+
+/*
+---------------- DATES FIELDS ----------------
+*/
+
+.dates-field-container {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.form-fields-label {
+  font-size: 17px;
+  font-weight: 200;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 4px;
+}
+
+.form-fields-label-small {
+  font-weight: 600;
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: normal;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+}
+
+/*
+---------------- DATES FIELD CALENDAR BUTTONS ----------------
+*/
+
+.calendar-button-container-outer {
+  font-weight: 600;
+}
+
+.calendar-button-container-middle {
+  position: relative;
+  display: block;
+}
+
+.calendar-button-container-inner {
+  background-color: #fff;
+  display: block;
+  border: 1px solid #DBDBDB;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.calendar-button-check-in {
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 24px;
+  color: #757575;
+  margin: 0px;
+  padding: 8px;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+  width: -webkit-calc(50% - 12px);
+  width: -moz-calc(50% - 12px);
+  width: calc(50% - 12px);
+  vertical-align: middle;
+}
+
+.calendar-svg-arrow {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.calendar-button-check-out {
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 24px;
+  color: #757575;
+  margin: 0px;
+  padding: 8px;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+  width: -webkit-calc(50% - 12px);
+  width: -moz-calc(50% - 12px);
+  width: calc(50% - 12px);
+  vertical-align: middle;
+}
+
+/*
+---------------- GUESTS FIELD  ----------------
+*/
+
+.guests-field-container {
+  margin-bottom: 16px;
+}
+
+/*guests label --> use .form-fields-label*/
+
+/*<small> text, --> .form-fields-label-small */
+
+.guests-button-container-outer {
+  position: relative;
+}
+
+.guests-button-container-middle {
+  width: 100%;
+  position: relative;
+}
+
+.guests-button {
+  background: #ffffff;
+  text-align: left;
+  border-radius: 2px;
+  padding: 8px;
+  line-height: normal;
+  display: block;
+  width: 100%;
+  border: 1px solid #DBDBDB;
+}
+
+.guests-button-content-container {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.guests-button-table-container {
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: undefined;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  font-weight: normal;
+}
+
+.guests-button-table {
+  display: table;
+  width: 100%;
+}
+
+.guests-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.guests-table-cell-arrow-svg {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.guests-table-cell-label {
+  white-space: nowrap;
+  margin-right: 1em;
+  overflow: hidden;
+}
+
+.guests-table-cell-label-text {
+  display: inline-block;
+  padding: 0.25em 0;
+}
+
