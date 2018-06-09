@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class BookingFooter extends React.Component {
+class BookingFooter extends Component {
   constructor(props) {
     super(props);
 

@@ -160,15 +160,15 @@ label {
 ---------------- BOOKING HEADER SECTION ----------------
 */
 
-.header-text {
+.header-pricing-container {
   line-height: 10px;
 }
 
-.header-text div {
+.header-pricing-content-container {
   display: inline-block;
 }
 
-.header-cost-text {
+.header-pricing-dollar-amount {
   word-wrap: break-word;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
   font-size: 19px;
@@ -182,7 +182,7 @@ label {
   margin: 0px;
 }
 
-.header-per-night {
+.header-pricing-per-night {
   font-weight: 600;
   margin: 0px;
   word-wrap: break-word;
@@ -196,7 +196,7 @@ label {
   display: inline;
 }
 
-.header-reviews-summary {
+.header-reviews-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;
