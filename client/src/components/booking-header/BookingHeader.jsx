@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PricingDetails from './PricingDetails';
 import StarRating from './StarRating';
+import Spacing from './Spacing';
 
 class BookingHeader extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class BookingHeader extends Component {
         <div>
           <StarRating starRating={this.state.starRating} reviewCount={this.state.reviewCount} />
         </div>
+        <Spacing />
       </div>
     );
   }

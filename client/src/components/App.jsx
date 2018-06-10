@@ -23,9 +23,23 @@ class App extends Component {
         <div className="booking-header-parent">
           <BookingHeader listing={this.state.listing} reviews={this.state.reviews} />
         </div>
-        <div className="booking-form-parent">
-          <BookingForm />
-        </div>
+        <form id="booking-form">
+          <div className="booking-form-fields">
+            <div className="form-fields-spacing-dates">
+              <div>
+                <label htmlFor={`dates_${this.state.listing.id}`} className="form-fields-dates-label">
+                  <small className="form-fields-dates-label-small">
+                    <span>Dates</span>
+                  </small>
+                </label>
+                <div className="calendar-container">
+                  Calendar place-holder
+                </div>
+              </div>
+            </div>
+            <div className="form-fields-spacing-guests" />
+          </div>
+        </form>
         <div className="booking-footer-parent">
           <BookingFooter />
         </div>

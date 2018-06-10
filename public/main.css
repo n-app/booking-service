@@ -23,6 +23,11 @@ div {
   display: block;
 }
 
+form {
+    display: block;
+    margin-top: 0em;
+}
+
 /*
 ---------------- BUTTON CSS ----------------
 */
@@ -160,6 +165,10 @@ label {
 ---------------- BOOKING HEADER SECTION ----------------
 */
 
+/*
+---------------- HEADER SUB-COMPONENT: PRICING INFO ----------------
+*/
+
 .header-pricing-container {
   line-height: 10px;
 }
@@ -170,7 +179,7 @@ label {
 
 .header-pricing-dollar-amount {
   word-wrap: break-word;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-size: 19px;
   line-height: 26px;
   letter-spacing: normal;
@@ -186,7 +195,7 @@ label {
   font-weight: 600;
   margin: 0px;
   word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: normal;
@@ -195,6 +204,10 @@ label {
   color: #484848;
   display: inline;
 }
+
+/*
+---------------- HEADER SUB-COMPONENT: REVIEWS SUMMARY ----------------
+*/
 
 .header-reviews-button {
   -webkit-appearance: none;
@@ -260,7 +273,7 @@ label {
   font-weight: 600;
   margin: 0px;
   word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: normal;
@@ -280,27 +293,32 @@ label {
 }
 
 /*
----------------- BOOKING HEADER SECTION ----------------
+---------------- BOOKING FORM SECTION ----------------
 */
 
 #booking-form {
 
 }
 
-.form-fields-container{
+.booking-form-fields {
 
 }
 
-/*
----------------- DATES FIELDS ----------------
-*/
-
-.dates-field-container {
+.form-fields-spacing-dates {
   margin-top: 16px;
   margin-bottom: 8px;
 }
 
-.form-fields-label {
+.form-fields-spacing-guests {
+  margin-bottom: 16px;
+}
+
+
+/*
+---------------- FORM SUB-COMPONENT DATES FIELDS ----------------
+*/
+
+.form-fields-dates-label {
   font-size: 17px;
   font-weight: 200;
   margin: 0px;
@@ -308,11 +326,10 @@ label {
   padding-bottom: 4px;
 }
 
-.form-fields-label-small {
+.form-fields-dates-label-small {
   font-weight: 600;
   margin: 0px;
   word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: normal;
@@ -325,11 +342,11 @@ label {
 ---------------- DATES FIELD CALENDAR BUTTONS ----------------
 */
 
-.calendar-button-container-outer {
+.calendar-container {
   font-weight: 600;
 }
 
-.calendar-button-container-middle {
+/*.calendar-button-container-middle {
   position: relative;
   display: block;
 }
@@ -377,7 +394,7 @@ label {
   width: -moz-calc(50% - 12px);
   width: calc(50% - 12px);
   vertical-align: middle;
-}
+}*/
 
 /*
 ---------------- GUESTS FIELD  ----------------
