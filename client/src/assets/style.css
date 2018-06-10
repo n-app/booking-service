@@ -270,12 +270,12 @@ label {
   display: inline;
 }
 
-.header-line-break {
+.spacing-header {
   margin-top: 16px;
   margin-bottom: 16px;
 }
 
-.header-line-break div {
+.spacing-header-line {
   border-bottom: 1px solid #DBDBDB;
 }
 

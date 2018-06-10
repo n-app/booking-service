@@ -85,6 +85,10 @@ const StarRating = ({ starRating, reviewCount }) => (
             renderRatingArr(starRating).map(rating => renderStars(rating))
           }
         </span>
+        {' '}
+        <span className="rating-total-text">
+          {reviewCount}
+        </span>
       </span>
     </button>
   </div>
