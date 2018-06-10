@@ -49,6 +49,7 @@
     "mysql": "^2.15.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
+    "react-dates": "^16.7.0",
     "react-dom": "^16.4.0"
   }
 }
