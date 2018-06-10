@@ -212,7 +212,7 @@ label {
   vertical-align: bottom;
 }
 
-.icon-star-container-full {
+.icon-star-container {
   display: inline-block;
   color: #008489;
   font-size: 9px;
@@ -236,6 +236,13 @@ label {
   width: 1em;
   display: block;
   fill: currentColor;
+}
+
+.icon-star-empty {
+  height: 1em;
+  width: 1em;
+  display: block;
+  fill: #D8D8D8;
 }
 
 .icon-star-half-grey {

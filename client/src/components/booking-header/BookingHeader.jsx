@@ -9,7 +9,7 @@ class BookingHeader extends Component {
 
     this.state = {
       reviewCount: props.reviews.totalReviews,
-      starRating: (props.reviews.starSum / props.reviews.totalReviews).toFixed(1),
+      starRating: (props.reviews.starSum / props.reviews.totalReviews),
       price: props.listing.price,
     };
   }

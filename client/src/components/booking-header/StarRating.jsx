@@ -18,6 +18,12 @@ const Star = props => (
   </svg>
 );
 
+const StarEmpty = props => (
+  <svg viewBox="0 0 1000 1000" role="presentation" className="icon-star-empty">
+    <path d={fullStarSVG} />
+  </svg>
+);
+
 const StarHalf = props => (
   <svg viewBox="0 0 1000 1000" role="presentation" className="icon-star">
     <path d={halfStarSVG} />
@@ -25,8 +31,14 @@ const StarHalf = props => (
 );
 
 const IconStar = props => (
-  <span className="icon-star-container-full">
+  <span className="icon-star-container">
     <Star />
+  </span>
+);
+
+const IconStarEmpty = props => (
+  <span className="icon-star-container">
+    <StarEmpty />
   </span>
 );
 
@@ -41,27 +53,38 @@ const IconStarHalf = props => (
   </span>
 );
 
-// const IconStarHalf = props => (
-//   <span className="rating-star-container">
-//     <span className="icon-star-half-grey">
-//       <svg viewBox="0 0 1000 1000" role="presentation" className="icon-star">
-//         <path d={fullStarSVG} />
-//       </svg>
-//     </span>
-//     <span className="icon-star-half-green">
-//       <svg viewBox="0 0 1000 1000" role="presentation" className="icon-star">
-//         <path d={halfStarSVG} />
-//       </svg>
-//     </span>
-//   </span>
-// );
+const renderRatingArr = (rating) => {
+  const ratingArr = [];
+  for (let i = 0; i < 5; i += 1) {
+    if (rating - i < 1 && rating - i > 0) {
+      ratingArr.push('half');
+    } else if (i >= rating || rating === 0) {
+      ratingArr.push('empty');
+    } else {
+      ratingArr.push('full');
+    }
+  }
+  return ratingArr;
+};
+
+const renderStars = (rating) => {
+  if (rating === 'full') {
+    return <IconStar />;
+  } else if (rating === 'half') {
+    return <IconStarHalf />;
+  }
+  return <IconStarEmpty />;
+};
 
 const StarRating = ({ starRating, reviewCount }) => (
   <div>
     <button type="button" className="header-reviews-button">
-      <span role="img">
-        <IconStar />
-        <IconStarHalf />
+      <span>
+        <span role="img">
+          {
+            renderRatingArr(starRating).map(rating => renderStars(rating))
+          }
+        </span>
       </span>
     </button>
   </div>
