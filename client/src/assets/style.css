@@ -167,6 +167,10 @@ label {
   margin-bottom: 24px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .booking-header-parent {
 
 }
@@ -490,58 +494,61 @@ label {
 
 /* ---------------------------------------------- */
 
-.guests-button {
-  background: #ffffff;
-  text-align: left;
-  border-radius: 2px;
-  padding: 8px;
-  line-height: normal;
-  display: block;
-  width: 100%;
-  border: 1px solid #DBDBDB;
+/*
+---------------- BOOKING FOOTER SECTION ----------------
+*/
+
+.footer-button-spacing {
+  margin-top: 24px;
 }
 
-.guests-button-content-container {
-  margin-left: 8px;
-  margin-right: 8px;
-}
-
-.guests-button-table-container {
+.booking-button {
+  cursor: pointer;
+  display: inline-block;
   margin: 0px;
-  word-wrap: break-word;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition-property: background, border-color, color;
+  -moz-transition-property: background, border-color, color;
+  transition-property: background, border-color, color;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  border-radius: 4px;
+  width: 100%;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 21px;
   letter-spacing: undefined;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  color: #484848;
-  font-weight: normal;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight: 800;
+  border-width: 2px;
+  border-style: solid;
+  padding-left: 24px;
+  padding-right: 24px;
+  min-width: 77.66563145999496px;
+  box-shadow: none;
+  background: #FF5A5F;
+  border-color: transparent;
+  color: #ffffff;
 }
 
-.guests-button-table {
-  display: table;
-  width: 100%;
+.booking-button-text {
+    margin: 0px;
+    word-wrap: break-word;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: undefined;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: 800;
+    color: #ffffff;
 }
 
-.guests-table-cell {
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
+.booking-charge-text-spacing {
+  margin-top: 8px;
 }
 
-.guests-table-cell-arrow-svg {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.guests-table-cell-label {
-  white-space: nowrap;
-  margin-right: 1em;
-  overflow: hidden;
-}
-
-.guests-table-cell-label-text {
-  display: inline-block;
-  padding: 0.25em 0;
-}

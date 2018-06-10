@@ -47,7 +47,9 @@ class App extends Component {
           </div>
         </form>
         <div className="booking-footer-parent">
-          <BookingFooter />
+          <div className="footer-button-spacing">
+            <BookingFooter />
+          </div>
         </div>
       </div>
     );
