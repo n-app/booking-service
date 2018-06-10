@@ -63,6 +63,28 @@ button, input, select, textarea {
   margin: 0;
 }
 
+input, textarea, select, button {
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em;
+  font: 400 11px system-ui;
+}
+
+input, textarea, select, button, meter, progress {
+  -webkit-writing-mode: horizontal-tb;
+}
+
+button {
+  -webkit-appearance: button;
+}
+
 *, *:before, *:after, hr, hr:before, hr:after, input[type="search"], input[type="search"]:before, input[type="search"]:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -90,26 +112,16 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
   border-image: initial;
 }
 
-input, textarea, select, button {
-  text-rendering: auto;
-  color: initial;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: start;
-  margin: 0em;
-  font: 400 11px system-ui;
+input[type="hidden" i], input[type="image" i], input[type="file" i] {
+  -webkit-appearance: initial;
+  background-color: initial;
+  cursor: default;
+  padding: initial;
+  border: initial;
 }
 
-input, textarea, select, button, meter, progress {
-  -webkit-writing-mode: horizontal-tb;
-}
-
-button {
-  -webkit-appearance: button;
+input[type="hidden" i] {
+    display: none;
 }
 
 /*
@@ -118,6 +130,12 @@ button {
 
 label, input, textarea, select, input[type="radio"], input[type="checkbox"], .input-prefix, .input-suffix {
   line-height: normal;
+}
+
+label {
+  display: block;
+  padding-top: 9px;
+  padding-bottom: 8px;
 }
 
 label {
@@ -304,6 +322,26 @@ label {
 
 }
 
+.form-fields-label {
+  font-size: 17px;
+  font-weight: 200;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 4px;
+}
+
+.form-fields-label-small {
+  font-weight: 600;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: normal;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+}
+
 .form-fields-spacing-dates {
   margin-top: 16px;
   margin-bottom: 8px;
@@ -318,83 +356,21 @@ label {
 ---------------- FORM SUB-COMPONENT DATES FIELDS ----------------
 */
 
-.form-fields-dates-label {
-  font-size: 17px;
-  font-weight: 200;
-  margin: 0px;
-  padding: 0px;
-  padding-bottom: 4px;
-}
 
-.form-fields-dates-label-small {
-  font-weight: 600;
-  margin: 0px;
-  word-wrap: break-word;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: normal;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  color: #484848;
-}
 
 /*
 ---------------- DATES FIELD CALENDAR BUTTONS ----------------
 */
 
 .calendar-container {
+/*  background-color: #fff;*/
   font-weight: 600;
-}
-
-/*.calendar-button-container-middle {
-  position: relative;
-  display: block;
-}
-
-.calendar-button-container-inner {
-  background-color: #fff;
+/*  position: relative;
   display: block;
   border: 1px solid #DBDBDB;
   border-radius: 2px;
-  width: 100%;
+  width: 100%;*/
 }
-
-.calendar-button-check-in {
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 24px;
-  color: #757575;
-  margin: 0px;
-  padding: 8px;
-  background: #fff;
-  position: relative;
-  display: inline-block;
-  width: -webkit-calc(50% - 12px);
-  width: -moz-calc(50% - 12px);
-  width: calc(50% - 12px);
-  vertical-align: middle;
-}
-
-.calendar-svg-arrow {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.calendar-button-check-out {
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 24px;
-  color: #757575;
-  margin: 0px;
-  padding: 8px;
-  background: #fff;
-  position: relative;
-  display: inline-block;
-  width: -webkit-calc(50% - 12px);
-  width: -moz-calc(50% - 12px);
-  width: calc(50% - 12px);
-  vertical-align: middle;
-}*/
 
 /*
 ---------------- GUESTS FIELD  ----------------
@@ -408,14 +384,111 @@ label {
 
 /*<small> text, --> .form-fields-label-small */
 
-.guests-button-container-outer {
+.guest-picker-container {
   position: relative;
 }
 
-.guests-button-container-middle {
+.guest-picker-trigger-container {
   width: 100%;
   position: relative;
 }
+
+.guest-picker-trigger-content-spacing {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.guest-picker-trigger-selected {
+  text-align: left;
+  line-height: normal;
+  display: block;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  padding: 8px;
+  border-width: 1px 1px 2px;
+  border-style: solid;
+  border-color: rgb(219, 219, 219) rgb(219, 219, 219) rgb(0, 132, 137);
+  border-image: initial;
+  border-bottom: 2px solid rgb(0, 132, 137);
+}
+
+.guest-picker-trigger-not-selected {
+  background: #ffffff;
+  text-align: left;
+  border-radius: 2px;
+  padding: 8px;
+  line-height: normal;
+  display: block;
+  width: 100%;
+  border: 1px solid #DBDBDB;
+}
+
+.guest-picker-flexbar-container {
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: undefined;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  font-weight: normal;
+}
+
+.flexbar-content-container {
+  display: table;
+  width: 100%;
+}
+
+.flexbar-content-text {
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.flexbar-content-icon {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.icon-chevron {
+  height: 16px;
+  width: 16px;
+  display: block;
+  fill: currentcolor
+}
+
+.guest-label {
+    white-space: nowrap;
+    margin-right: 1em;
+    overflow: hidden;
+}
+
+.guest-label-text {
+    display: inline-block;
+    padding: 0.25em 0;
+}
+
+.guest-label-text-guests {
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+}
+
+.text-highlight {
+  background-color: #99ede6;
+  border-color: #99ede6;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #007a87;
+  cursor: pointer;
+  padding: 0.25em 0.5em;
+}
+
+
+/* ---------------------------------------------- */
 
 .guests-button {
   background: #ffffff;

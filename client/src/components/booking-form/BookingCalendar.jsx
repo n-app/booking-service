@@ -10,6 +10,7 @@ const calendarDefaults = {
   startDatePlaceholderText: 'Check In',
   endDateId: 'checkout',
   endDatePlaceholderText: 'Check Out',
+  hideKeyboardShortcutsPanel: true,
 };
 
 class BookingCalendar extends Component {

@@ -4,6 +4,7 @@ import '../assets/style.css';
 import BookingHeader from './booking-header/BookingHeader';
 import BookingFooter from './booking-footer/BookingFooter';
 import BookingCalendar from './booking-form/BookingCalendar';
+import GuestPicker from './booking-form/GuestPicker';
 
 class App extends Component {
   constructor(props) {
@@ -27,15 +28,22 @@ class App extends Component {
           <div className="booking-form-fields">
             <div className="form-fields-spacing-dates">
               <div>
-                <label htmlFor={`dates_${this.state.listing.id}`} className="form-fields-dates-label">
-                  <small className="form-fields-dates-label-small">
+                <label htmlFor={`dates_${this.state.listing.id}`} className="form-fields-label">
+                  <small className="form-fields-label-small">
                     <span>Dates</span>
                   </small>
                 </label>
                 <BookingCalendar />
               </div>
             </div>
-            <div className="form-fields-spacing-guests" />
+            <div className="form-fields-spacing-guests">
+              <label htmlFor={`dates_${this.state.listing.id}`} className="form-fields-label">
+                <small className="form-fields-label-small">
+                  <span>Guests</span>
+                </small>
+              </label>
+              <GuestPicker />
+            </div>
           </div>
         </form>
         <div className="booking-footer-parent">
