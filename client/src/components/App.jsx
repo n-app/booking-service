@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../assets/style.css';
 import BookingHeader from './booking-header/BookingHeader';
-import BookingForm from './booking-form/BookingForm';
 import BookingFooter from './booking-footer/BookingFooter';
+import BookingCalendar from './booking-form/BookingCalendar';
 
 class App extends Component {
   constructor(props) {
@@ -32,9 +32,7 @@ class App extends Component {
                     <span>Dates</span>
                   </small>
                 </label>
-                <div className="calendar-container">
-                  Calendar place-holder
-                </div>
+                <BookingCalendar />
               </div>
             </div>
             <div className="form-fields-spacing-guests" />
