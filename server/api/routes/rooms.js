@@ -1,13 +1,23 @@
 const express = require('express');
-const routesDebug = require('debug')('app:routes');
+const db = require('../../../database/index');
+const debug = require('debug')('app:*');
 
 const router = express.Router();
 
 router.get('/:id', (req, res, next) => {
-  const { id } = req.params;
-  routesDebug(`GET room id: ${id}`);
-  res.status(200).json({
-    message: `room ${id} fetched`,
+  let { id } = req.params;
+  id -= 1000 - 1;
+  debug(`ID: ${id}`);
+
+  db.queryAllDbTablesByRoomId(id, (error, results) => {
+    if (error) {
+      debug(error[0]);
+    } else {
+      debug(results);
+      res.status(200).json({
+        data: results,
+      });
+    }
   });
 });
 
