@@ -23,6 +23,11 @@ class BookingCalendar extends Component {
       endDate: null,
       focusedInput: null,
     };
+    this.handleDateChange = this.handleDateChange.bind(this);
+  }
+
+  handleDateChange(startDate, endDate) {
+    this.setState({ startDate, endDate });
   }
 
   render() {
@@ -36,7 +41,7 @@ class BookingCalendar extends Component {
           endDate={this.state.endDate} // momentPropTypes.momentObj or null,
           endDateId={calendarDefaults.endDateId} // PropTypes.string.isRequired,
           endDatePlaceholderText={calendarDefaults.endDatePlaceholderText}
-          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+          onDatesChange={({ startDate, endDate }) => this.handleDateChange(startDate, endDate)} // PropTypes.func.isRequired,
           focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
           onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
           numberOfMonths={calendarDefaults.numberOfMonths}

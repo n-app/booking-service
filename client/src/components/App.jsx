@@ -34,10 +34,10 @@ class App extends Component {
         const reviews = data.results.reviews[0];
 
         this.setState({
-          bookings: bookings,
-          listing: listing,
-          owner: owner,
-          reviews: reviews,
+          bookings,
+          listing,
+          owner,
+          reviews,
         });
       })
       .catch((error) => {
@@ -52,28 +52,38 @@ class App extends Component {
           <div className="booking-header-parent">
             <BookingHeader listing={this.state.listing} reviews={this.state.reviews} />
           </div>
-          <form id="booking-form">
+          <div id="booking-form">
             <div className="booking-form-fields">
               <div className="form-fields-spacing-dates">
                 <div>
-                  <label htmlFor={`dates_${this.state.listing.id}`} className="form-fields-label">
+                  <div id={`dates_${this.state.listing.id}`} className="form-fields-label">
                     <small className="form-fields-label-small">
                       <span>Dates</span>
                     </small>
-                  </label>
-                  <BookingCalendar />
+                  </div>
+                  <BookingCalendar
+                    bookings={this.state.bookings}
+                    bookedDates={this.state.bookings.map((range) => {
+                      const booked = [];
+                      booked.push(range.startDate);
+                      booked.push(range.endDate);
+                      return booked;
+                    })}
+                  />
                 </div>
               </div>
               <div className="form-fields-spacing-guests">
-                <label htmlFor={`dates_${this.state.listing.id}`} className="form-fields-label">
+                <div id={`dates_${this.state.listing.id}`} className="form-fields-label">
                   <small className="form-fields-label-small">
                     <span>Guests</span>
                   </small>
-                </label>
-                <GuestPicker />
+                </div>
+                <GuestPicker
+                  listing={this.state.listing}
+                />
               </div>
             </div>
-          </form>
+          </div>
           <div className="booking-footer-parent">
             <div className="footer-button-spacing">
               <BookingFooter />

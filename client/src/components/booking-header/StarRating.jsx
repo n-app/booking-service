@@ -67,13 +67,13 @@ const renderRatingArr = (rating) => {
   return ratingArr;
 };
 
-const renderStars = (rating) => {
+const renderStars = (rating, i) => {
   if (rating === 'full') {
-    return <IconStar />;
+    return <IconStar key={i} />;
   } else if (rating === 'half') {
-    return <IconStarHalf />;
+    return <IconStarHalf key={i} />;
   }
-  return <IconStarEmpty />;
+  return <IconStarEmpty key={i} />;
 };
 
 const StarRating = ({ starRating, reviewCount }) => (
@@ -82,7 +82,7 @@ const StarRating = ({ starRating, reviewCount }) => (
       <span>
         <span role="img">
           {
-            renderRatingArr(starRating).map(rating => renderStars(rating))
+            renderRatingArr(starRating).map((rating, i) => renderStars(rating, i))
           }
         </span>
         {' '}
