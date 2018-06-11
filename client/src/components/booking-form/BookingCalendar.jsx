@@ -11,6 +11,7 @@ const calendarDefaults = {
   endDateId: 'checkout',
   endDatePlaceholderText: 'Check Out',
   hideKeyboardShortcutsPanel: true,
+  blockLayout: true,
 };
 
 class BookingCalendar extends Component {
@@ -40,6 +41,7 @@ class BookingCalendar extends Component {
           onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
           numberOfMonths={calendarDefaults.numberOfMonths}
           hideKeyboardShortcutsPanel={calendarDefaults.hideKeyboardShortcutsPanel}
+          block={calendarDefaults.blockLayout}
         />
       </div>
     );

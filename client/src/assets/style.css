@@ -367,13 +367,9 @@ label {
 */
 
 .calendar-container {
-/*  background-color: #fff;*/
   font-weight: 600;
-/*  position: relative;
-  display: block;
-  border: 1px solid #DBDBDB;
-  border-radius: 2px;
-  width: 100%;*/
+  position: relative;
+  width: 100%;
 }
 
 /*
