@@ -13,9 +13,9 @@ class GuestPicker extends Component {
   }
 
   handleGuestPickerTiggerClick() {
-    this.setState(prevState => ({
-      isTriggerClicked: !prevState.isTriggerClicked,
-    }));
+    this.setState({
+      isTriggerClicked: !this.state.isTriggerClicked,
+    });
   }
 
   render() {
