@@ -34,8 +34,8 @@ const FlexBarTextContentHighlight = ({ guestDetails }) => (
   </div>
 );
 
-const FlexBar = ({ isSelected, guestDetails }) => (
-  isSelected ? (
+const FlexBar = ({ isFocused, guestDetails }) => (
+  isFocused ? (
     <div className="flexbar-content-container">
       <FlexBarTextContentHighlight
         guestDetails={guestDetails}
@@ -53,6 +53,7 @@ const FlexBar = ({ isSelected, guestDetails }) => (
         <IconChevronDown />
       </div>
     </div>
-));
+  )
+);
 
 export default FlexBar;

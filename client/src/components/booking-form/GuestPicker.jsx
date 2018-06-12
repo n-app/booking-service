@@ -6,16 +6,7 @@ class GuestPicker extends Component {
     super(props);
 
     this.state = {
-      isTriggerClicked: false,
     };
-
-    this.handleGuestPickerTiggerClick = this.handleGuestPickerTiggerClick.bind(this);
-  }
-
-  handleGuestPickerTiggerClick() {
-    this.setState({
-      isTriggerClicked: !this.state.isTriggerClicked,
-    });
   }
 
   render() {
@@ -23,7 +14,7 @@ class GuestPicker extends Component {
       <div className="guest-picker-container">
         <div className="guest-picker-dropdown-container guest-picker-container">
           <GuestPickerTrigger
-            handleGuestPickerTiggerClick={this.handleGuestPickerTiggerClick}
+            onGuestPickerFocus={this.props.onGuestPickerFocus}
             listing={this.props.listing}
           />
         </div>

@@ -19,9 +19,11 @@ const containerStyle = {
   Infants: 'filter-dropdown-item-larger-container',
 };
 
-const GuestCountFilter = ({ isSelected, maxGuests, guestDetails }) => (
-  isSelected ? (
-    <div className="guest-count-filter-container">
+const GuestCountFilter = ({ isFocused, maxGuests, guestDetails, handleGuestPickerFocus }) => (
+  isFocused ? (
+    <div
+      className="guest-count-filter-container"
+    >
       <div className="guest-count-filter-dropdown-container">
         {Object.keys(guestDetails).map(guest =>
           (

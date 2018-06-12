@@ -16,13 +16,21 @@ class App extends Component {
     super(props);
 
     this.state = {
+      guestPickerFocus: false,
     };
 
     this.getRoomListing = this.getRoomListing.bind(this);
+    this.onGuestPickerFocus = this.onGuestPickerFocus.bind(this);
   }
 
   componentDidMount() {
     this.getRoomListing(Math.floor(Math.random() * (99)) + 1000);
+  }
+
+  onGuestPickerFocus() {
+    this.setState({
+      guestPickerFocus: !this.state.guestPickerFocus,
+    });
   }
 
   getRoomListing(id) {
@@ -79,6 +87,8 @@ class App extends Component {
                   </small>
                 </div>
                 <GuestPicker
+                  onGuestPickerFocus={this.onGuestPickerFocus}
+                  guestPickerFocus={this.state.guestPickerFocus}
                   listing={this.state.listing}
                 />
               </div>
