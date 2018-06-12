@@ -24,6 +24,7 @@ class GuestPicker extends Component {
         <div className="guest-picker-dropdown-container guest-picker-container">
           <GuestPickerTrigger
             handleGuestPickerTiggerClick={this.handleGuestPickerTiggerClick}
+            listing={this.props.listing}
           />
         </div>
       </div>

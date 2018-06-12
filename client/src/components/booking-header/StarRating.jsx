@@ -12,37 +12,37 @@ const halfStarSVG = 'M 510.2 23.3 l 1 767.3 l -226.1 172.2 c -25 17 -59 12 -78' 
       '28.1 -39.1 52.1 -39.1 Z';
 
 
-const Star = props => (
+const Star = () => (
   <svg viewBox="0 0 1000 1000" role="presentation" className="icon-star">
     <path d={fullStarSVG} />
   </svg>
 );
 
-const StarEmpty = props => (
+const StarEmpty = () => (
   <svg viewBox="0 0 1000 1000" role="presentation" className="icon-star-empty">
     <path d={fullStarSVG} />
   </svg>
 );
 
-const StarHalf = props => (
+const StarHalf = () => (
   <svg viewBox="0 0 1000 1000" role="presentation" className="icon-star">
     <path d={halfStarSVG} />
   </svg>
 );
 
-const IconStar = props => (
+const IconStar = () => (
   <span className="icon-star-container">
     <Star />
   </span>
 );
 
-const IconStarEmpty = props => (
+const IconStarEmpty = () => (
   <span className="icon-star-container">
     <StarEmpty />
   </span>
 );
 
-const IconStarHalf = props => (
+const IconStarHalf = () => (
   <span className="icon-star-container-half">
     <span className="icon-star-half-grey">
       <Star />

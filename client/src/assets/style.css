@@ -467,13 +467,9 @@ label {
 
 .guest-label-text {
     display: inline-block;
-    padding: 0.25em 0;
-}
-
-.guest-label-text-guests {
-  font-size: 17px;
-  margin: 0;
-  padding: 0;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
 }
 
 .text-highlight {
@@ -487,6 +483,33 @@ label {
   padding: 0.25em 0.5em;
 }
 
+.guest-count-filter-container {
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
+    width: 100%;
+    min-width: 280px;
+    text-align: left;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    z-index: 2;
+    left: 0px;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    padding: 0px 16px;
+}
+
+.guest-count-filter-dropdown-container {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.guest-count-filter-flexbar-container {
+  display: table;
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-bottom: 0px;
+}
 
 /* ---------------------------------------------- */
 
