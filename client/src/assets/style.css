@@ -594,13 +594,12 @@ label {
   border-color: rgb(0, 132, 137);
   background: transparent;
   border-width: 1px;
+  outline: none;
 }
-/*
-add for a short period when focused
-.button-guest-select-small:focus {
-    box-shadow: rgb(0, 132, 137) 0px 0px 2px 2px;
-    outline: none;
-}*/
+
+.button-guest-select-small:active {
+  box-shadow: rgb(0, 132, 137) 0px 0px 2px 2px;
+}
 
 .button-guest-select-icon-container {
   display: inline-block;
@@ -610,7 +609,6 @@ add for a short period when focused
   transform: translate(-50%, -50%);
   color: rgb(0, 132, 137);
   font-size: 16px;
-  z-index: 3;
 }
 
 .button-guest-select-svg {
@@ -618,7 +616,6 @@ add for a short period when focused
   width: 1em;
   display: block;
   fill: currentcolor;
-  z-index: 4;
 }
 
 

@@ -19,11 +19,15 @@ const PlusSignSVG = props => (
 
 const SelectGuestButton = ({ side }) => (
   side ? (
-    <button className="button-guest-select-small">
+    <button
+      className="button-guest-select-small"
+    >
       <MinusSignSVG />
     </button>
   ) : (
-    <button className="button-guest-select-small">
+    <button
+      className="button-guest-select-small"
+    >
       <PlusSignSVG />
     </button>
   )
