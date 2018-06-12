@@ -18,33 +18,41 @@ const IconChevronUp = props => (
   </svg>
 );
 
-const FlexBarTextContent = props => (
-  <span className="guest-label-text guest-label-text-guests">
-    <span>1 guest</span>
-  </span>
-);
-
-const FlexBarTextContentHighlight = props => (
-  <span className="guest-label-text guest-label-text-guests text-highlight">
-    <span>1 guest</span>
-  </span>
-);
-
-const FlexBarText = props => (
+const FlexBarTextContent = ({ guestDetails }) => (
   <div className="flexbar-content-text">
-    <div className="guest-label">
-      <FlexBarTextContent />
-    </div>
+    <span className="guest-label">
+      <span className="guest-label-text">guests {guestDetails.adults}</span>
+    </span>
   </div>
 );
 
-const FlexBar = props => (
-  <div className="flexbar-content-container">
-    <FlexBarText />
-    <div className="flexbar-content-icon">
-      <IconChevronDown />
-    </div>
+const FlexBarTextContentHighlight = ({ guestDetails }) => (
+  <div className="flexbar-content-text">
+    <span className="guest-label">
+      <span className="guest-label-text text-highlight">guests {guestDetails.adults}</span>
+    </span>
   </div>
 );
+
+const FlexBar = ({ isSelected, guestDetails }) => (
+  isSelected ? (
+    <div className="flexbar-content-container">
+      <FlexBarTextContentHighlight
+        guestDetails={guestDetails}
+      />
+      <div className="flexbar-content-icon">
+        <IconChevronUp />
+      </div>
+    </div>
+  ) : (
+    <div className="flexbar-content-container">
+      <FlexBarTextContent
+        guestDetails={guestDetails}
+      />
+      <div className="flexbar-content-icon">
+        <IconChevronDown />
+      </div>
+    </div>
+));
 
 export default FlexBar;

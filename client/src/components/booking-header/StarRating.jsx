@@ -12,37 +12,37 @@ const halfStarSVG = 'M 510.2 23.3 l 1 767.3 l -226.1 172.2 c -25 17 -59 12 -78' 
       '28.1 -39.1 52.1 -39.1 Z';
 
 
-const Star = props => (
+const Star = () => (
   <svg viewBox="0 0 1000 1000" role="presentation" className="icon-star">
     <path d={fullStarSVG} />
   </svg>
 );
 
-const StarEmpty = props => (
+const StarEmpty = () => (
   <svg viewBox="0 0 1000 1000" role="presentation" className="icon-star-empty">
     <path d={fullStarSVG} />
   </svg>
 );
 
-const StarHalf = props => (
+const StarHalf = () => (
   <svg viewBox="0 0 1000 1000" role="presentation" className="icon-star">
     <path d={halfStarSVG} />
   </svg>
 );
 
-const IconStar = props => (
+const IconStar = () => (
   <span className="icon-star-container">
     <Star />
   </span>
 );
 
-const IconStarEmpty = props => (
+const IconStarEmpty = () => (
   <span className="icon-star-container">
     <StarEmpty />
   </span>
 );
 
-const IconStarHalf = props => (
+const IconStarHalf = () => (
   <span className="icon-star-container-half">
     <span className="icon-star-half-grey">
       <Star />
@@ -67,13 +67,13 @@ const renderRatingArr = (rating) => {
   return ratingArr;
 };
 
-const renderStars = (rating) => {
+const renderStars = (rating, i) => {
   if (rating === 'full') {
-    return <IconStar />;
+    return <IconStar key={i} />;
   } else if (rating === 'half') {
-    return <IconStarHalf />;
+    return <IconStarHalf key={i} />;
   }
-  return <IconStarEmpty />;
+  return <IconStarEmpty key={i} />;
 };
 
 const StarRating = ({ starRating, reviewCount }) => (
@@ -82,7 +82,7 @@ const StarRating = ({ starRating, reviewCount }) => (
       <span>
         <span role="img">
           {
-            renderRatingArr(starRating).map(rating => renderStars(rating))
+            renderRatingArr(starRating).map((rating, i) => renderStars(rating, i))
           }
         </span>
         {' '}

@@ -367,13 +367,9 @@ label {
 */
 
 .calendar-container {
-/*  background-color: #fff;*/
   font-weight: 600;
-/*  position: relative;
-  display: block;
-  border: 1px solid #DBDBDB;
-  border-radius: 2px;
-  width: 100%;*/
+  position: relative;
+  width: 100%;
 }
 
 /*
@@ -471,13 +467,9 @@ label {
 
 .guest-label-text {
     display: inline-block;
-    padding: 0.25em 0;
-}
-
-.guest-label-text-guests {
-  font-size: 17px;
-  margin: 0;
-  padding: 0;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
 }
 
 .text-highlight {
@@ -491,6 +483,155 @@ label {
   padding: 0.25em 0.5em;
 }
 
+.guest-count-filter-container {
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
+    width: 100%;
+    min-width: 280px;
+    text-align: left;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    z-index: 2;
+    left: 0px;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    padding: 0px 16px;
+}
+
+.guest-count-filter-flexbar-container {
+  display: table;
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-bottom: 0px;
+}
+
+.filter-flexbar-text-container {
+    display: table;
+    margin-right: 12px;
+}
+
+.filter-flexbar-text {
+  font-weight: 600;
+  word-wrap: break-word;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: rgb(72, 72, 72);
+  margin: 0px;
+}
+
+.filter-flexbar-sub-text-container {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  padding-top: 4px;
+  padding-bottom: 0px;
+  color: rgb(72, 72, 72);
+  display: block;
+}
+
+.filter-flexbar-sub-text {
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  font-weight: normal;
+}
+
+.filter-dropdown-item-smaller-container {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.filter-dropdown-item-larger-container {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.filter-flexbar-buttons-container {
+  display: table;
+  width: 120px;
+}
+
+.filter-flexbar-button-left-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.filter-flexbar-button-value-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.filter-flexbar-button-right-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.button-guest-select-small {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  box-shadow: none;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgb(0, 132, 137);
+  background: transparent;
+  border-width: 1px;
+  outline: none;
+}
+
+.button-guest-select-small:active {
+  box-shadow: rgb(0, 132, 137) 0px 0px 2px 2px;
+}
+
+.button-guest-select-icon-container {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 132, 137);
+  font-size: 16px;
+}
+
+.button-guest-select-svg {
+  height: 1em;
+  width: 1em;
+  display: block;
+  fill: currentcolor;
+}
+
+
+
+/*
+#guestCountPickerAdults {
+  display: block;
+}
+
+#guestCountPicker_children {
+  display: block;
+}
+
+#guestCountPicker_infants {
+  display: block;
+}*/
 
 /* ---------------------------------------------- */
 

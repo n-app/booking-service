@@ -15,7 +15,7 @@ router.get('/:id', (req, res, next) => {
     } else {
       debug(results);
       res.status(200).json({
-        data: results,
+        results,
       });
     }
   });
