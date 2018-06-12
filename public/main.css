@@ -579,6 +579,50 @@ label {
     vertical-align: middle;
     text-align: right;
 }
+
+.button-guest-select-small {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  box-shadow: none;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgb(0, 132, 137);
+  background: transparent;
+  border-width: 1px;
+}
+/*
+add for a short period when focused
+.button-guest-select-small:focus {
+    box-shadow: rgb(0, 132, 137) 0px 0px 2px 2px;
+    outline: none;
+}*/
+
+.button-guest-select-icon-container {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 132, 137);
+  font-size: 16px;
+  z-index: 3;
+}
+
+.button-guest-select-svg {
+  height: 1em;
+  width: 1em;
+  display: block;
+  fill: currentcolor;
+  z-index: 4;
+}
+
+
+
 /*
 #guestCountPickerAdults {
   display: block;

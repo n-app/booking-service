@@ -1,16 +1,22 @@
 import React from 'react';
+import SelectGuestButton from './SelectGuestButton';
 
-const FlexBarSelectGuestButtons = (props) => (
+const isLeftButton = {
+  left: true,
+  right: false,
+};
+
+const FlexBarSelectGuestButtons = ({ selectedGuests }) => (
   <div className="flexbar-content-icon">
     <div className="filter-flexbar-buttons-container">
       <div className="filter-flexbar-button-left-container">
-        left
+        <SelectGuestButton side={isLeftButton.left} />
       </div>
       <div className="filter-flexbar-button-value-container">
-        1
+        {selectedGuests}
       </div>
       <div className="filter-flexbar-button-right-container">
-        right
+        <SelectGuestButton side={isLeftButton.right} />
       </div>
     </div>
   </div>

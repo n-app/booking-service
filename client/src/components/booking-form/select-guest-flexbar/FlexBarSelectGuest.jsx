@@ -9,7 +9,7 @@ const FlexBarSelectGuest = ({ label, guestType, numOfGuests, guestDetails, conta
       guestType={guestType === 'adults'}
     />
     <div className="flexbar-content-icon">
-      <FlexBarSelectGuestButtons />
+      <FlexBarSelectGuestButtons selectedGuests={guestDetails[guestType]} />
     </div>
   </div>
 );
