@@ -498,11 +498,6 @@ label {
     padding: 0px 16px;
 }
 
-.guest-count-filter-dropdown-container {
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
 .guest-count-filter-flexbar-container {
   display: table;
   width: 100%;
@@ -510,6 +505,92 @@ label {
   padding-bottom: 0px;
   border-bottom: 0px;
 }
+
+.filter-flexbar-text-container {
+    display: table;
+    margin-right: 12px;
+}
+
+.filter-flexbar-text {
+  font-weight: 600;
+  word-wrap: break-word;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: rgb(72, 72, 72);
+  margin: 0px;
+}
+
+.filter-flexbar-sub-text-container {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  padding-top: 4px;
+  padding-bottom: 0px;
+  color: rgb(72, 72, 72);
+  display: block;
+}
+
+.filter-flexbar-sub-text {
+  margin: 0px;
+  word-wrap: break-word;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: #484848;
+  font-weight: normal;
+}
+
+.filter-dropdown-item-smaller-container {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.filter-dropdown-item-larger-container {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.filter-flexbar-buttons-container {
+  display: table;
+  width: 120px;
+}
+
+.filter-flexbar-button-left-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.filter-flexbar-button-value-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.filter-flexbar-button-right-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+}
+/*
+#guestCountPickerAdults {
+  display: block;
+}
+
+#guestCountPicker_children {
+  display: block;
+}
+
+#guestCountPicker_infants {
+  display: block;
+}*/
 
 /* ---------------------------------------------- */
 
