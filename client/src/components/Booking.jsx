@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import '../assets/style.css';
+import '../assets/booking.css';
 import BookingHeader from './booking-header/BookingHeader';
 import BookingFooter from './booking-footer/BookingFooter';
 import BookingCalendar from './booking-form/BookingCalendar';
@@ -11,7 +11,7 @@ const instance = axios.create({
   baseURL: 'http://127.0.0.1:3004/',
 });
 
-class App extends Component {
+class Booking extends Component {
   constructor(props) {
     super(props);
 
@@ -108,4 +108,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Booking;
