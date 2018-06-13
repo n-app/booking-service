@@ -7,10 +7,6 @@ import BookingFooter from './booking-footer/BookingFooter';
 import BookingCalendar from './booking-form/BookingCalendar';
 import GuestPicker from './booking-form/GuestPicker';
 
-const instance = axios.create({
-  baseURL: 'http://127.0.0.1:3004/',
-});
-
 class Booking extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +30,7 @@ class Booking extends Component {
   }
 
   getRoomListing(id) {
-    instance.get(`rooms/${id}`)
+    axios.get(`/booking/${id}`)
       .then(({ data }) => {
         const bookings = data.results.bookings;
         const listing = data.results.listing[0];

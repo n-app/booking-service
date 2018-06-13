@@ -5,7 +5,7 @@ const http = require('http');
 const path = require('path');
 const bodyParser = require('body-parser');
 
-const roomRoutes = require('./api/routes/rooms');
+const roomRoutes = require('./api/routes/booking');
 
 const app = express();
 
@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, '../public/dist')));
 
-app.use('/rooms', roomRoutes);
+app.use('/booking', roomRoutes);
 
 app.use((req, res, next) => {
   const error = new Error('Not found');
