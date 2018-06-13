@@ -12,11 +12,17 @@ class Booking extends Component {
     super(props);
 
     this.state = {
+      focusedDateInput: null,
+      selectedStartDate: null,
+      selectedEndDate: null,
+      isFetchingPricingQuote: false,
       guestPickerFocus: false,
     };
 
     this.getRoomListing = this.getRoomListing.bind(this);
     this.onGuestPickerFocus = this.onGuestPickerFocus.bind(this);
+    this.setTripDates = this.setTripDates.bind(this);
+    this.setTripDetailsFormRef = this.setTripDetailsFormRef.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +33,25 @@ class Booking extends Component {
     this.setState({
       guestPickerFocus: !this.state.guestPickerFocus,
     });
+  }
+
+  setTripDates(startDate, endDate) {
+    this.setState({
+      selectedStartDate: startDate || null,
+      selectedEndDate: endDate || null,
+    }, () => {
+      if (this.state.selectedStartDate && this.state.selectedEndDate) {
+        this.setTripDetailsFormRef(this.state.selectedStartDate, this.state.selectedEndDate);
+      }
+    });
+  }
+
+  setTripDetailsFormRef() {
+    if (!this.state.isFetchingPricingQuote) {
+      this.setState({
+        isFetchingPricingQuote: !this.state.isFetchingPricingQuote,
+      });
+    }
   }
 
   getRoomListing(id) {
@@ -73,6 +98,7 @@ class Booking extends Component {
                       booked.push(range.endDate);
                       return booked;
                     })}
+                    setTripDates={this.setTripDates}
                   />
                 </div>
               </div>
