@@ -15,6 +15,8 @@ class GuestPicker extends Component {
         <div className="guest-picker-dropdown-container guest-picker-container">
           <GuestPickerTrigger
             onGuestPickerFocus={this.props.onGuestPickerFocus}
+            onGuestDetailsUpdate={this.props.onGuestDetailsUpdate}
+            guestDetails={this.props.guestDetails}
             listing={this.props.listing}
           />
         </div>

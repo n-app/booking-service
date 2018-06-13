@@ -598,7 +598,11 @@ label {
     padding: 0px 16px;
 }
 
-.button-guest-select-small {
+/*
+
+*/
+
+.button-guest-select {
   display: inline-block;
   cursor: pointer;
   text-align: center;
@@ -615,11 +619,18 @@ label {
   outline: none;
 }
 
-.button-guest-select-small:active {
+.button-guest-select:active {
   box-shadow: rgb(0, 132, 137) 0px 0px 2px 2px;
 }
 
-.button-guest-select-icon-container {
+.button-guest-select:disabled {
+  cursor: default;
+  border-color: rgba(0, 132, 137, 0.3);
+  background: transparent;
+  box-shadow: none;
+}
+
+.button-guest-select-icon {
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -627,6 +638,10 @@ label {
   transform: translate(-50%, -50%);
   color: rgb(0, 132, 137);
   font-size: 16px;
+}
+
+.button-guest-select-icon.disabled {
+  color: rgba(0, 132, 137, 0.3);
 }
 
 .button-guest-select-svg {

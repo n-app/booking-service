@@ -19,16 +19,7 @@ const containerStyle = {
   Infants: 'filter-dropdown-item-larger-container',
 };
 
-// class GuestCountFilter extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-
-//     }
-//   }
-// }
-
-const GuestCountFilter = ({ isFocused, maxGuests, guestDetails }) => (
+const GuestCountFilter = ({ isFocused, maxGuests, maximumBooked, guestDetails, updateGuestDetails }) => (
   isFocused ? (
     <div
       className="guest-count-filter-container"
@@ -37,7 +28,9 @@ const GuestCountFilter = ({ isFocused, maxGuests, guestDetails }) => (
         {Object.keys(guestDetails).map(guest =>
           (
             <FlexBarSelectGuest
+              maximumBooked={maximumBooked}
               guestDetails={guestDetails}
+              updateGuestDetails={updateGuestDetails}
               label={selectGuestLabels[guest]}
               guestType={guest}
               numOfGuests={guestDetails[guest]}

@@ -18,10 +18,16 @@ class Booking extends Component {
       selectedEndDate: null,
       isFetchingPricingQuote: false,
       guestPickerFocus: false,
+      guestDetails: {
+        adults: 1,
+        children: 0,
+        infants: 0,
+      },
     };
 
     this.getRoomListing = this.getRoomListing.bind(this);
     this.onGuestPickerFocus = this.onGuestPickerFocus.bind(this);
+    this.onGuestDetailsUpdate = this.onGuestDetailsUpdate.bind(this);
     this.setTripDates = this.setTripDates.bind(this);
     this.setTripDetailsFormRef = this.setTripDetailsFormRef.bind(this);
   }
@@ -33,6 +39,12 @@ class Booking extends Component {
   onGuestPickerFocus() {
     this.setState({
       guestPickerFocus: !this.state.guestPickerFocus,
+    });
+  }
+
+  onGuestDetailsUpdate(updatedDetails) {
+    this.setState({
+      guestDetails: updatedDetails,
     });
   }
 
@@ -111,7 +123,9 @@ class Booking extends Component {
                 </div>
                 <GuestPicker
                   onGuestPickerFocus={this.onGuestPickerFocus}
+                  onGuestDetailsUpdate={this.onGuestDetailsUpdate}
                   guestPickerFocus={this.state.guestPickerFocus}
+                  guestDetails={this.state.guestDetails}
                   listing={this.state.listing}
                 />
               </div>

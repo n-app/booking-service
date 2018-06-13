@@ -1,15 +1,20 @@
 import React from 'react';
 
-const MinusSignSVG = props => (
-  <span className="button-guest-select-icon-container">
+const buttonDisabledStyle = {
+  isDisabled: 'button-guest-select-icon disabled',
+  notDisabled: 'button-guest-select-icon',
+};
+
+const MinusSignSVG = ({ disabled }) => (
+  <span className={disabled ? buttonDisabledStyle.isDisabled : buttonDisabledStyle.notDisabled}>
     <svg viewBox="0 0 24 24" role="img" focusable="false" className="button-guest-select-svg">
       <rect height="2" rx="1" width="12" x="6" y="11" fill="currentcolor" />
     </svg>
   </span>
 );
 
-const PlusSignSVG = props => (
-  <span className="button-guest-select-icon-container">
+const PlusSignSVG = ({ disabled }) => (
+  <span className={disabled ? buttonDisabledStyle.isDisabled : buttonDisabledStyle.notDisabled}>
     <svg viewBox="0 0 24 24" role="img" focusable="false" className="button-guest-select-svg">
       <rect height="2" rx="1" width="12" x="6" y="11" fill="currentcolor" />
       <rect height="12" rx="1" width="2" x="11" y="6" fill="currentcolor" />
@@ -17,18 +22,30 @@ const PlusSignSVG = props => (
   </span>
 );
 
-const SelectGuestButton = ({ side }) => (
+const SelectGuestButton = ({ side, disabled, guestType, updateGuestDetails }) => (
   side ? (
     <button
-      className="button-guest-select-small"
+      className="button-guest-select"
+      disabled={disabled}
+      onClick={() => {
+        updateGuestDetails(side, disabled, guestType);
+      }}
     >
-      <MinusSignSVG />
+      <MinusSignSVG
+        disabled={disabled}
+      />
     </button>
   ) : (
     <button
-      className="button-guest-select-small"
+      className="button-guest-select"
+      disabled={disabled}
+      onClick={() => {
+        updateGuestDetails(side, disabled, guestType);
+      }}
     >
-      <PlusSignSVG />
+      <PlusSignSVG
+        disabled={disabled}
+      />
     </button>
   )
 );

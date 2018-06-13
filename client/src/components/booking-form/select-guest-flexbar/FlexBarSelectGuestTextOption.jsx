@@ -1,7 +1,7 @@
 import React from 'react';
 
-const FlexBarSelectGuestTextOption = ({ label, guestType }) => (
-  guestType ? (
+const FlexBarSelectGuestTextOption = ({ label, noSubDescription }) => (
+  noSubDescription ? (
     <div className="flexbar-content-text">
       <div className="filter-flexbar-text-container">
         <div>
