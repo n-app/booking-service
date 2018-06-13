@@ -5,7 +5,7 @@ const FlexBarSelectGuestTextOption = ({ label, guestType }) => (
     <div className="flexbar-content-text">
       <div className="filter-flexbar-text-container">
         <div>
-          <div className="filter-flexbar-text">
+          <div className="flexbar-text large">
             <span>{label}</span>
           </div>
         </div>
@@ -15,13 +15,13 @@ const FlexBarSelectGuestTextOption = ({ label, guestType }) => (
     <div className="flexbar-content-text">
       <div className="filter-flexbar-text-container">
         <div>
-          <div className="filter-flexbar-text">
+          <div className="flexbar-text large">
             <span>{label}</span>
           </div>
         </div>
       </div>
       <div className="filter-flexbar-sub-text-container">
-        <div className="filter-flexbar-sub-text">
+        <div className="flexbar-text">
           <span>{label === 'Children' ? 'Ages 2 - 12' : 'Under 2'}</span>
         </div>
       </div>

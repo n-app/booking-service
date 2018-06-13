@@ -6,6 +6,7 @@ import BookingHeader from './booking-header/BookingHeader';
 import BookingFooter from './booking-footer/BookingFooter';
 import BookingCalendar from './booking-form/BookingCalendar';
 import GuestPicker from './booking-form/GuestPicker';
+import PricingQuote from './booking-form/pricing-quote/PricingQuote';
 
 class Booking extends Component {
   constructor(props) {
@@ -115,6 +116,9 @@ class Booking extends Component {
                 />
               </div>
             </div>
+            <PricingQuote
+              isFetchingPricingQuote={this.state.isFetchingPricingQuote}
+            />
           </div>
           <div className="booking-footer-parent">
             <div className="footer-button-spacing">

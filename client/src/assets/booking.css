@@ -142,6 +142,7 @@ label {
   cursor: default;
 }
 
+
 /*
 ---------------- component positioning and styling ----------------
 */
@@ -181,6 +182,130 @@ label {
 
 .booking-footer-parent {
 
+}
+
+/*
+---------------- FLEX BAR STYLES  ----------------
+*/
+
+/*
+-- FLEX BAR SPACING --
+*/
+
+.spacing-header {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.spacing-pricing-quote {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.flexbar-spacing-line {
+  border-bottom: 1px solid #DBDBDB;
+}
+
+/*
+-- FLEXBAR CONTAINERS --
+*/
+
+.flexbar-content-container {
+  display: table;
+  width: 100%;
+}
+
+.flexbar-content-text {
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.flexbar-content-icon {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.filter-dropdown-item-smaller-container {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.filter-dropdown-item-larger-container {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.filter-flexbar-buttons-container {
+  display: table;
+  width: 120px;
+}
+
+.filter-flexbar-button-left-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.filter-flexbar-button-value-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.filter-flexbar-button-right-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.guest-count-filter-flexbar-container {
+  display: table;
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-bottom: 0px;
+}
+
+.filter-flexbar-sub-text-container {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  padding-top: 4px;
+  padding-bottom: 0px;
+  color: rgb(72, 72, 72);
+  display: block;
+}
+
+.filter-flexbar-text-container {
+    display: table;
+    margin-right: 12px;
+}
+
+/*
+-- FLEXBAR TEXT --
+*/
+
+.flexbar-text {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  margin: 0px;
+  color: #484848;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: inline;
+}
+
+.flexbar-text.large {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgb(72, 72, 72);
 }
 
 /*
@@ -305,15 +430,6 @@ label {
   display: inline;
 }
 
-.spacing-header {
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
-.spacing-header-line {
-  border-bottom: 1px solid #DBDBDB;
-}
-
 /*
 ---------------- BOOKING FORM SECTION ----------------
 */
@@ -436,22 +552,6 @@ label {
   font-weight: normal;
 }
 
-.flexbar-content-container {
-  display: table;
-  width: 100%;
-}
-
-.flexbar-content-text {
-  display: table-cell;
-  width: 100%;
-  vertical-align: middle;
-}
-
-.flexbar-content-icon {
-  display: table-cell;
-  vertical-align: middle;
-}
-
 .icon-chevron {
   height: 16px;
   width: 16px;
@@ -498,88 +598,6 @@ label {
     padding: 0px 16px;
 }
 
-.guest-count-filter-flexbar-container {
-  display: table;
-  width: 100%;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  border-bottom: 0px;
-}
-
-.filter-flexbar-text-container {
-    display: table;
-    margin-right: 12px;
-}
-
-.filter-flexbar-text {
-  font-weight: 600;
-  word-wrap: break-word;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 22px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  color: rgb(72, 72, 72);
-  margin: 0px;
-}
-
-.filter-flexbar-sub-text-container {
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: normal;
-  padding-top: 4px;
-  padding-bottom: 0px;
-  color: rgb(72, 72, 72);
-  display: block;
-}
-
-.filter-flexbar-sub-text {
-  margin: 0px;
-  word-wrap: break-word;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: normal;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  color: #484848;
-  font-weight: normal;
-}
-
-.filter-dropdown-item-smaller-container {
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
-.filter-dropdown-item-larger-container {
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-.filter-flexbar-buttons-container {
-  display: table;
-  width: 120px;
-}
-
-.filter-flexbar-button-left-container {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-}
-
-.filter-flexbar-button-value-container {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
-
-.filter-flexbar-button-right-container {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: right;
-}
-
 .button-guest-select-small {
   display: inline-block;
   cursor: pointer;
@@ -619,19 +637,14 @@ label {
 }
 
 
-
 /*
-#guestCountPickerAdults {
-  display: block;
+---------------- PRICE QUOTE FORM ----------------
+*/
+
+.price-quote-form-container {
+  margin-bottom: 8;
 }
 
-#guestCountPicker_children {
-  display: block;
-}
-
-#guestCountPicker_infants {
-  display: block;
-}*/
 
 /* ---------------------------------------------- */
 

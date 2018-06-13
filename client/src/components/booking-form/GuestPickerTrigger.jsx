@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import FlexBar from './FlexBar';
 import GuestCountFilter from './GuestCountFilter';
 
-// const triggerButtonStyles = {
-//   isSelected: 'guest-picker-trigger-selected',
-//   notSelected: 'guest-picker-trigger-not-selected',
-// };
-
 class GuestPickerTrigger extends Component {
   constructor(props) {
     super(props);
