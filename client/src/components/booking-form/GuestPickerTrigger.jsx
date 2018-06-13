@@ -14,7 +14,26 @@ class GuestPickerTrigger extends Component {
         infants: 0,
       },
     };
+    this.guestDropDown = React.createRef();
+    this.onOutsideClick = this.onOutsideClick.bind(this);
     this.handleGuestPickerFocus = this.handleGuestPickerFocus.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', e => this.onOutsideClick(e), true);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.onOutsideClick);
+  }
+
+  onOutsideClick(e) {
+    if (this.guestDropDown.current.contains(e.target)) {
+      return;
+    }
+    if (this.state.isFocused) {
+      this.handleGuestPickerFocus();
+    }
   }
 
   handleGuestPickerFocus() {
@@ -44,12 +63,13 @@ class GuestPickerTrigger extends Component {
             </div>
           </div>
         </button>
-        <GuestCountFilter
-          handleGuestPickerFocus={this.handleGuestPickerFocus}
-          isFocused={this.state.isFocused}
-          maxGuests={this.props.listing.maxGuests}
-          guestDetails={this.state.guestDetails}
-        />
+        <div ref={this.guestDropDown}>
+          <GuestCountFilter
+            isFocused={this.state.isFocused}
+            maxGuests={this.props.listing.maxGuests}
+            guestDetails={this.state.guestDetails}
+          />
+        </div>
       </div>
     );
   }

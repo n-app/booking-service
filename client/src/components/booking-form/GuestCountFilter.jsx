@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FlexBarSelectGuest from './select-guest-flexbar/FlexBarSelectGuest';
 
 const selectGuestKeys = {
@@ -19,7 +19,16 @@ const containerStyle = {
   Infants: 'filter-dropdown-item-larger-container',
 };
 
-const GuestCountFilter = ({ isFocused, maxGuests, guestDetails, handleGuestPickerFocus }) => (
+// class GuestCountFilter extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+
+//     }
+//   }
+// }
+
+const GuestCountFilter = ({ isFocused, maxGuests, guestDetails }) => (
   isFocused ? (
     <div
       className="guest-count-filter-container"
