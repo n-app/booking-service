@@ -18,27 +18,50 @@ const IconChevronUp = props => (
   </svg>
 );
 
-const FlexBarTextContent = ({ guestDetails }) => (
-  <div className="flexbar-content-text">
-    <span className="guest-label">
-      <span className="guest-label-text">guests {guestDetails.adults}</span>
-    </span>
-  </div>
+const FlexBarTextContent = ({ guestDetails, renderChildTag }) => (
+  renderChildTag ? (
+    <div className="flexbar-content-text">
+      <span className="guest-label">
+        <span className="guest-label-text">guests {guestDetails.adults}</span>
+      </span>
+      <span className="guest-label">
+        <span className="guest-label-text">children {guestDetails.children}</span>
+      </span>
+    </div>
+  ) : (
+    <div className="flexbar-content-text">
+      <span className="guest-label">
+        <span className="guest-label-text">guests {guestDetails.adults}</span>
+      </span>
+    </div>
+  )
 );
 
-const FlexBarTextContentHighlight = ({ guestDetails }) => (
-  <div className="flexbar-content-text">
-    <span className="guest-label">
-      <span className="guest-label-text text-highlight">guests {guestDetails.adults}</span>
-    </span>
-  </div>
+const FlexBarTextContentHighlight = ({ guestDetails, renderChildTag }) => (
+  renderChildTag ? (
+    <div className="flexbar-content-text">
+      <span className="guest-label">
+        <span className="guest-label-text text-highlight">guests {guestDetails.adults}</span>
+      </span>
+      <span className="guest-label">
+        <span className="guest-label-text text-highlight">children {guestDetails.children}</span>
+      </span>
+    </div>
+  ) : (
+    <div className="flexbar-content-text">
+      <span className="guest-label">
+        <span className="guest-label-text text-highlight">guests {guestDetails.adults}</span>
+      </span>
+    </div>
+  )
 );
 
-const FlexBar = ({ isSelected, guestDetails }) => (
-  isSelected ? (
+const FlexBar = ({ isFocused, guestDetails, renderChildTag }) => (
+  isFocused ? (
     <div className="flexbar-content-container">
       <FlexBarTextContentHighlight
         guestDetails={guestDetails}
+        renderChildTag={renderChildTag}
       />
       <div className="flexbar-content-icon">
         <IconChevronUp />
@@ -48,11 +71,13 @@ const FlexBar = ({ isSelected, guestDetails }) => (
     <div className="flexbar-content-container">
       <FlexBarTextContent
         guestDetails={guestDetails}
+        renderChildTag={renderChildTag}
       />
       <div className="flexbar-content-icon">
         <IconChevronDown />
       </div>
     </div>
-));
+  )
+);
 
 export default FlexBar;

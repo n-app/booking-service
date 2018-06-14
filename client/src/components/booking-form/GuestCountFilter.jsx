@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FlexBarSelectGuest from './select-guest-flexbar/FlexBarSelectGuest';
 
 const selectGuestKeys = {
@@ -19,14 +19,18 @@ const containerStyle = {
   Infants: 'filter-dropdown-item-larger-container',
 };
 
-const GuestCountFilter = ({ isSelected, maxGuests, guestDetails }) => (
-  isSelected ? (
-    <div className="guest-count-filter-container">
+const GuestCountFilter = ({ isFocused, maxGuests, maximumBooked, guestDetails, updateGuestDetails }) => (
+  isFocused ? (
+    <div
+      className="guest-count-filter-container"
+    >
       <div className="guest-count-filter-dropdown-container">
         {Object.keys(guestDetails).map(guest =>
           (
             <FlexBarSelectGuest
+              maximumBooked={maximumBooked}
               guestDetails={guestDetails}
+              updateGuestDetails={updateGuestDetails}
               label={selectGuestLabels[guest]}
               guestType={guest}
               numOfGuests={guestDetails[guest]}

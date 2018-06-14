@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import Booking from './components/Booking';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Booking />, document.getElementById('booking'));

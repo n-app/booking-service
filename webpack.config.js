@@ -3,10 +3,10 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: { main: './client/src/index.jsx' },
+  entry: { booking: './client/src/index.jsx' },
   resolve: { extensions: ['.js', '.jsx'] },
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'public/dist'),
     filename: '[name].js',
   },
   module: {

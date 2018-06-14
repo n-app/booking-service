@@ -1,32 +1,86 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import '../assets/style.css';
+import Moment from 'moment';
+import { extendMoment } from 'moment-range';
+import '../assets/booking.css';
 import BookingHeader from './booking-header/BookingHeader';
 import BookingFooter from './booking-footer/BookingFooter';
 import BookingCalendar from './booking-form/BookingCalendar';
 import GuestPicker from './booking-form/GuestPicker';
+import PricingQuote from './booking-form/pricing-quote/PricingQuote';
 
-const instance = axios.create({
-  baseURL: 'http://127.0.0.1:3004/',
-});
+const moment = extendMoment(Moment);
 
-class App extends Component {
+class Booking extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      focusedDateInput: null,
+      selectedStartDate: null,
+      selectedEndDate: null,
+      isFetchingPricingQuote: false,
+      guestPickerFocus: false,
+      guestDetails: {
+        adults: 1,
+        children: 0,
+        infants: 0,
+      },
+      tripDuration: 0,
     };
 
     this.getRoomListing = this.getRoomListing.bind(this);
+    this.onGuestPickerFocus = this.onGuestPickerFocus.bind(this);
+    this.onGuestDetailsUpdate = this.onGuestDetailsUpdate.bind(this);
+    this.setTripDates = this.setTripDates.bind(this);
+    this.setTripDetailsFormRef = this.setTripDetailsFormRef.bind(this);
   }
 
   componentDidMount() {
     this.getRoomListing(Math.floor(Math.random() * (99)) + 1000);
   }
 
+  onGuestPickerFocus() {
+    this.setState({
+      guestPickerFocus: !this.state.guestPickerFocus,
+    });
+  }
+
+  onGuestDetailsUpdate(updatedDetails) {
+    this.setState({
+      guestDetails: updatedDetails,
+    });
+  }
+
+  setTripDates(startDate, endDate) {
+    this.setState({
+      selectedStartDate: startDate || null,
+      selectedEndDate: endDate || null,
+    }, () => {
+      if (this.state.selectedStartDate && this.state.selectedEndDate) {
+        this.setTripDetailsFormRef(this.state.selectedStartDate, this.state.selectedEndDate);
+      }
+    });
+  }
+
+  setTripDetailsFormRef() {
+    const bookedRange = moment.range(this.state.selectedStartDate, this.state.selectedEndDate);
+    const daysBooked = bookedRange.diff('days');
+
+    this.setState({
+      tripDuration: daysBooked,
+    }, () => {
+      if (!this.state.isFetchingPricingQuote) {
+        this.setState({
+          isFetchingPricingQuote: !this.state.isFetchingPricingQuote,
+        });
+      }
+    });
+  }
+
   getRoomListing(id) {
-    instance.get(`rooms/${id}`)
+    axios.get(`/booking/${id}`)
       .then(({ data }) => {
         const bookings = data.results.bookings;
         const listing = data.results.listing[0];
@@ -69,6 +123,7 @@ class App extends Component {
                       booked.push(range.endDate);
                       return booked;
                     })}
+                    setTripDates={this.setTripDates}
                   />
                 </div>
               </div>
@@ -79,14 +134,29 @@ class App extends Component {
                   </small>
                 </div>
                 <GuestPicker
+                  onGuestPickerFocus={this.onGuestPickerFocus}
+                  onGuestDetailsUpdate={this.onGuestDetailsUpdate}
+                  guestPickerFocus={this.state.guestPickerFocus}
+                  guestDetails={this.state.guestDetails}
                   listing={this.state.listing}
                 />
               </div>
             </div>
+            <PricingQuote
+              isFetchingPricingQuote={this.state.isFetchingPricingQuote}
+              guestDetails={this.state.guestDetails}
+              tripDuration={this.state.tripDuration}
+              nightsTxt={this.state.tripDuration > 1 ? 'nights' : 'night'}
+              areaTax={this.state.listing.areaTax}
+              cleaningFee={this.state.listing.cleaningFee}
+              price={this.state.listing.price}
+            />
           </div>
           <div className="booking-footer-parent">
             <div className="footer-button-spacing">
-              <BookingFooter />
+              <BookingFooter
+                isFetchingPricingQuote={this.state.isFetchingPricingQuote}
+              />
             </div>
           </div>
         </div>
@@ -98,4 +168,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Booking;
