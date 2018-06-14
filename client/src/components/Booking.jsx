@@ -102,61 +102,65 @@ class Booking extends Component {
   render() {
     if (this.state.bookings && this.state.listing && this.state.owner && this.state.reviews) {
       return (
-        <div className="app-parent">
-          <div className="booking-header-parent">
-            <BookingHeader listing={this.state.listing} reviews={this.state.reviews} />
-          </div>
-          <div id="booking-form">
-            <div className="booking-form-fields">
-              <div className="form-fields-spacing-dates">
-                <div>
-                  <div id={`dates_${this.state.listing.id}`} className="form-fields-label">
-                    <small className="form-fields-label-small">
-                      <span>Dates</span>
-                    </small>
+        <div className="booking">
+          <div className="booking-container-html booking-container-body">
+            <div className="booking-parent-spacing">
+              <div className="booking-header-parent">
+                <BookingHeader listing={this.state.listing} reviews={this.state.reviews} />
+              </div>
+              <div id="booking-form">
+                <div className="booking-form-fields">
+                  <div className="form-fields-spacing-dates">
+                    <div>
+                      <div id={`dates_${this.state.listing.id}`} className="form-fields-label">
+                        <small className="form-fields-label-small">
+                          <span>Dates</span>
+                        </small>
+                      </div>
+                      <BookingCalendar
+                        bookings={this.state.bookings}
+                        bookedDates={this.state.bookings.map((range) => {
+                          const booked = [];
+                          booked.push(range.startDate);
+                          booked.push(range.endDate);
+                          return booked;
+                        })}
+                        setTripDates={this.setTripDates}
+                      />
+                    </div>
                   </div>
-                  <BookingCalendar
-                    bookings={this.state.bookings}
-                    bookedDates={this.state.bookings.map((range) => {
-                      const booked = [];
-                      booked.push(range.startDate);
-                      booked.push(range.endDate);
-                      return booked;
-                    })}
-                    setTripDates={this.setTripDates}
+                  <div className="form-fields-spacing-guests">
+                    <div id={`dates_${this.state.listing.id}`} className="form-fields-label">
+                      <small className="form-fields-label-small">
+                        <span>Guests</span>
+                      </small>
+                    </div>
+                    <GuestPicker
+                      onGuestPickerFocus={this.onGuestPickerFocus}
+                      onGuestDetailsUpdate={this.onGuestDetailsUpdate}
+                      guestPickerFocus={this.state.guestPickerFocus}
+                      guestDetails={this.state.guestDetails}
+                      listing={this.state.listing}
+                    />
+                  </div>
+                </div>
+                <PricingQuote
+                  isFetchingPricingQuote={this.state.isFetchingPricingQuote}
+                  guestDetails={this.state.guestDetails}
+                  tripDuration={this.state.tripDuration}
+                  nightsTxt={this.state.tripDuration > 1 ? 'nights' : 'night'}
+                  areaTax={this.state.listing.areaTax}
+                  cleaningFee={this.state.listing.cleaningFee}
+                  price={this.state.listing.price}
+                />
+              </div>
+              <div className="booking-footer-parent">
+                <div className="footer-button-spacing">
+                  <BookingFooter
+                    isFetchingPricingQuote={this.state.isFetchingPricingQuote}
                   />
                 </div>
               </div>
-              <div className="form-fields-spacing-guests">
-                <div id={`dates_${this.state.listing.id}`} className="form-fields-label">
-                  <small className="form-fields-label-small">
-                    <span>Guests</span>
-                  </small>
-                </div>
-                <GuestPicker
-                  onGuestPickerFocus={this.onGuestPickerFocus}
-                  onGuestDetailsUpdate={this.onGuestDetailsUpdate}
-                  guestPickerFocus={this.state.guestPickerFocus}
-                  guestDetails={this.state.guestDetails}
-                  listing={this.state.listing}
-                />
-              </div>
-            </div>
-            <PricingQuote
-              isFetchingPricingQuote={this.state.isFetchingPricingQuote}
-              guestDetails={this.state.guestDetails}
-              tripDuration={this.state.tripDuration}
-              nightsTxt={this.state.tripDuration > 1 ? 'nights' : 'night'}
-              areaTax={this.state.listing.areaTax}
-              cleaningFee={this.state.listing.cleaningFee}
-              price={this.state.listing.price}
-            />
-          </div>
-          <div className="booking-footer-parent">
-            <div className="footer-button-spacing">
-              <BookingFooter
-                isFetchingPricingQuote={this.state.isFetchingPricingQuote}
-              />
             </div>
           </div>
         </div>
