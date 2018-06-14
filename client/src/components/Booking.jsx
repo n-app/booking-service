@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import Moment from 'moment';
+import { extendMoment } from 'moment-range';
 import '../assets/booking.css';
 import BookingHeader from './booking-header/BookingHeader';
 import BookingFooter from './booking-footer/BookingFooter';
 import BookingCalendar from './booking-form/BookingCalendar';
 import GuestPicker from './booking-form/GuestPicker';
 import PricingQuote from './booking-form/pricing-quote/PricingQuote';
+
+const moment = extendMoment(Moment);
 
 class Booking extends Component {
   constructor(props) {
@@ -23,6 +27,7 @@ class Booking extends Component {
         children: 0,
         infants: 0,
       },
+      tripDuration: 0,
     };
 
     this.getRoomListing = this.getRoomListing.bind(this);
@@ -60,11 +65,18 @@ class Booking extends Component {
   }
 
   setTripDetailsFormRef() {
-    if (!this.state.isFetchingPricingQuote) {
-      this.setState({
-        isFetchingPricingQuote: !this.state.isFetchingPricingQuote,
-      });
-    }
+    const bookedRange = moment.range(this.state.selectedStartDate, this.state.selectedEndDate);
+    const daysBooked = bookedRange.diff('days');
+
+    this.setState({
+      tripDuration: daysBooked,
+    }, () => {
+      if (!this.state.isFetchingPricingQuote) {
+        this.setState({
+          isFetchingPricingQuote: !this.state.isFetchingPricingQuote,
+        });
+      }
+    });
   }
 
   getRoomListing(id) {
@@ -132,11 +144,19 @@ class Booking extends Component {
             </div>
             <PricingQuote
               isFetchingPricingQuote={this.state.isFetchingPricingQuote}
+              guestDetails={this.state.guestDetails}
+              tripDuration={this.state.tripDuration}
+              nightsTxt={this.state.tripDuration > 1 ? 'nights' : 'night'}
+              areaTax={this.state.listing.areaTax}
+              cleaningFee={this.state.listing.cleaningFee}
+              price={this.state.listing.price}
             />
           </div>
           <div className="booking-footer-parent">
             <div className="footer-button-spacing">
-              <BookingFooter />
+              <BookingFooter
+                isFetchingPricingQuote={this.state.isFetchingPricingQuote}
+              />
             </div>
           </div>
         </div>
