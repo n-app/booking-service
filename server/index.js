@@ -46,6 +46,6 @@ app.use((error, req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3004;
+const PORT = process.env.PORT || 3002;
 const server = http.createServer(app);
 server.listen(PORT, () => debug(`listening on port ${PORT}...`));
