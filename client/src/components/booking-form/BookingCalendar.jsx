@@ -32,26 +32,28 @@ class BookingCalendar extends Component {
 
   render() {
     return (
-      <div className="calendar-container">
-        <DateRangePicker
-          displayFormat={calendarDefaults.displayFormat}
-          startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-          startDateId={calendarDefaults.startDateId} // PropTypes.string.isRequired,
-          startDatePlaceholderText={calendarDefaults.startDatePlaceholderText}
-          endDate={this.state.endDate} // momentPropTypes.momentObj or null,
-          endDateId={calendarDefaults.endDateId} // PropTypes.string.isRequired,
-          endDatePlaceholderText={calendarDefaults.endDatePlaceholderText}
-          onDatesChange={({ startDate, endDate }) => {
-            this.setState({ startDate, endDate }, () => {
-              this.handleDateChange();
-            });
-          }} // PropTypes.func.isRequired,
-          focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-          onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-          numberOfMonths={calendarDefaults.numberOfMonths}
-          hideKeyboardShortcutsPanel={calendarDefaults.hideKeyboardShortcutsPanel}
-          block={calendarDefaults.blockLayout}
-        />
+      <div className="calendar-outer-container">
+        <div className="calendar-inner-container">
+          <DateRangePicker
+            displayFormat={calendarDefaults.displayFormat}
+            startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+            startDateId={calendarDefaults.startDateId} // PropTypes.string.isRequired,
+            startDatePlaceholderText={calendarDefaults.startDatePlaceholderText}
+            endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+            endDateId={calendarDefaults.endDateId} // PropTypes.string.isRequired,
+            endDatePlaceholderText={calendarDefaults.endDatePlaceholderText}
+            onDatesChange={({ startDate, endDate }) => {
+              this.setState({ startDate, endDate }, () => {
+                this.handleDateChange();
+              });
+            }} // PropTypes.func.isRequired,
+            focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+            onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+            numberOfMonths={calendarDefaults.numberOfMonths}
+            hideKeyboardShortcutsPanel={calendarDefaults.hideKeyboardShortcutsPanel}
+            block={calendarDefaults.blockLayout}
+          />
+        </div>
       </div>
     );
   }
