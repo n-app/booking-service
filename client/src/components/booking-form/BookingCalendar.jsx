@@ -21,7 +21,7 @@ class BookingCalendar extends Component {
     this.state = {
       startDate: null,
       endDate: null,
-      focusedInput: null,
+      focusedInput: this.props.focusedDateInput,
     };
     this.handleDateChange = this.handleDateChange.bind(this);
   }
@@ -47,8 +47,8 @@ class BookingCalendar extends Component {
                 this.handleDateChange();
               });
             }} // PropTypes.func.isRequired,
-            focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-            onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+            focusedInput={this.props.focusedDateInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+            onFocusChange={focusedInput => this.props.handleFocusChange(focusedInput)} // PropTypes.func.isRequired,
             numberOfMonths={calendarDefaults.numberOfMonths}
             hideKeyboardShortcutsPanel={calendarDefaults.hideKeyboardShortcutsPanel}
             block={calendarDefaults.blockLayout}

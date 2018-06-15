@@ -34,7 +34,9 @@ class Booking extends Component {
     this.onGuestPickerFocus = this.onGuestPickerFocus.bind(this);
     this.onGuestDetailsUpdate = this.onGuestDetailsUpdate.bind(this);
     this.setTripDates = this.setTripDates.bind(this);
+    this.handleFocusChange = this.handleFocusChange.bind(this);
     this.setTripDetailsFormRef = this.setTripDetailsFormRef.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -61,6 +63,14 @@ class Booking extends Component {
       if (this.state.selectedStartDate && this.state.selectedEndDate) {
         this.setTripDetailsFormRef(this.state.selectedStartDate, this.state.selectedEndDate);
       }
+    });
+  }
+
+  handleFocusChange(focusedInput) {
+    console.log('in main app', focusedInput);
+
+    this.setState({
+      focusedDateInput: focusedInput,
     });
   }
 
@@ -99,6 +109,17 @@ class Booking extends Component {
       });
   }
 
+  onSubmit() {
+    if (!this.state.selectedStartDate || !this.state.selectedStartDate) {
+      this.setState({
+        focusedDateInput: 'startDate',
+      });
+    }
+    console.log(this.state.selectedStartDate);
+    console.log(this.state.selectedEndDate);
+    console.log(this.state.guestDetails);
+  }
+
   render() {
     if (this.state.bookings && this.state.listing && this.state.owner && this.state.reviews) {
       return (
@@ -119,6 +140,8 @@ class Booking extends Component {
                       </div>
                       <BookingCalendar
                         bookings={this.state.bookings}
+                        handleFocusChange={this.handleFocusChange}
+                        focusedDateInput={this.state.focusedDateInput}
                         bookedDates={this.state.bookings.map((range) => {
                           const booked = [];
                           booked.push(range.startDate);
@@ -158,6 +181,7 @@ class Booking extends Component {
                 <div className="footer-button-spacing">
                   <BookingFooter
                     isFetchingPricingQuote={this.state.isFetchingPricingQuote}
+                    onSubmit={this.onSubmit}
                   />
                 </div>
               </div>
