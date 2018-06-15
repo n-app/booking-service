@@ -1,24 +1,8 @@
-.booking {
+#booking {
 
 }
 
-.booking .booking-container-html {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-tap-highlight-color: transparent;
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-.booking .booking-container-body {
-    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 1.43;
-    color: #484848;
-    background-color: #fff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+/*OUTER APP CONTAINER*/
 
 .position-booking {
   position: fixed;
@@ -29,11 +13,22 @@
 }
 
 .container-booking {
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding-left: 24px;
   padding-right: 24px;
   margin: 0px;
   border: 1px solid #e4e4e4;
   background-color: #ffffff;
+  color: #484848;
+  line-height: 1.43;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
 
 .booking-parent-spacing {
@@ -41,7 +36,7 @@
   margin-bottom: 24px;
 }
 
-.booking .text-center {
+.text-center {
   text-align: center;
 }
 
@@ -65,17 +60,17 @@
 -- FLEX BAR SPACING --
 */
 
-.booking .spacing-header {
+.spacing-header {
   margin-top: 16px;
   margin-bottom: 16px;
 }
 
-.booking .spacing-pricing-quote {
+.spacing-pricing-quote {
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
-.booking .flexbar-spacing-line {
+.flexbar-spacing-line {
   border-bottom: 1px solid #DBDBDB;
 }
 
@@ -83,56 +78,56 @@
 -- FLEXBAR CONTAINERS --
 */
 
-.booking .flexbar-content-container {
+.flexbar-content-container {
   display: table;
   width: 100%;
 }
 
-.booking .flexbar-content-text {
+.flexbar-content-text {
   display: table-cell;
   width: 100%;
   vertical-align: middle;
 }
 
-.booking .flexbar-content-icon {
+.flexbar-content-icon {
   display: table-cell;
   vertical-align: middle;
 }
 
-.booking .filter-dropdown-item-smaller-container {
+.filter-dropdown-item-smaller-container {
   margin-top: 16px;
   margin-bottom: 16px;
 }
 
-.booking .filter-dropdown-item-larger-container {
+.filter-dropdown-item-larger-container {
   margin-top: 24px;
   margin-bottom: 24px;
 }
 
-.booking .filter-flexbar-buttons-container {
+.filter-flexbar-buttons-container {
   display: table;
   width: 120px;
 }
 
-.booking .filter-flexbar-button-left-container {
+.filter-flexbar-button-left-container {
   display: table-cell;
   vertical-align: middle;
   text-align: left;
 }
 
-.booking .filter-flexbar-button-value-container {
+.filter-flexbar-button-value-container {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
 }
 
-.booking .filter-flexbar-button-right-container {
+.filter-flexbar-button-right-container {
     display: table-cell;
     vertical-align: middle;
     text-align: right;
 }
 
-.booking .guest-count-filter-flexbar-container {
+.guest-count-filter-flexbar-container {
   display: table;
   width: 100%;
   padding-top: 0px;
@@ -140,7 +135,7 @@
   border-bottom: 0px;
 }
 
-.booking .filter-flexbar-sub-text-container {
+.filter-flexbar-sub-text-container {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-size: 14px;
   line-height: 18px;
@@ -151,7 +146,7 @@
   display: block;
 }
 
-.booking .filter-flexbar-text-container {
+.filter-flexbar-text-container {
     display: table;
     margin-right: 12px;
 }
@@ -160,7 +155,7 @@
 -- FLEXBAR TEXT --
 */
 
-.booking .flexbar-text {
+.flexbar-text {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: normal;
   font-size: 14px;
@@ -174,7 +169,7 @@
   display: inline;
 }
 
-.booking .flexbar-text.large {
+.flexbar-text.large {
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
@@ -189,15 +184,15 @@
 ---------------- HEADER SUB-COMPONENT: PRICING INFO ----------------
 */
 
-.booking .header-pricing-container {
+.header-pricing-container {
   line-height: 10px;
 }
 
-.booking .header-pricing-content-container {
+.header-pricing-content-container {
   display: inline-block;
 }
 
-.booking .header-pricing-dollar-amount {
+.header-pricing-dollar-amount {
   word-wrap: break-word;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-size: 19px;
@@ -211,7 +206,7 @@
   margin: 0px;
 }
 
-.booking .header-pricing-per-night {
+.header-pricing-per-night {
   font-weight: 600;
   margin: 0px;
   word-wrap: break-word;
@@ -229,7 +224,7 @@
 ---------------- HEADER SUB-COMPONENT: REVIEWS SUMMARY ----------------
 */
 
-.booking .header-reviews-button {
+.header-reviews-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;
@@ -245,7 +240,7 @@
   vertical-align: bottom;
 }
 
-.booking .icon-star-container {
+.icon-star-container {
   display: inline-block;
   color: #008489;
   font-size: 9px;
@@ -254,7 +249,7 @@
   width: 9px;
 }
 
-.booking .icon-star-container-half {
+.icon-star-container-half {
   display: inline-block;
   position: relative;
   font-size: 9px;
@@ -264,32 +259,32 @@
   color: #008489;
 }
 
-.booking .icon-star {
+.icon-star {
   height: 1em;
   width: 1em;
   display: block;
   fill: currentColor;
 }
 
-.booking .icon-star-empty {
+.icon-star-empty {
   height: 1em;
   width: 1em;
   display: block;
   fill: #D8D8D8;
 }
 
-.booking .icon-star-half-grey {
+.icon-star-half-grey {
   left: 0px;
   position: absolute;
   color: #D8D8D8;
 }
 
-.booking .icon-start-half-green {
+.icon-start-half-green {
   left: 0px;
   position: absolute;
 }
 
-.booking .rating-total-text {
+.rating-total-text {
   font-weight: 600;
   margin: 0px;
   word-wrap: break-word;
@@ -315,7 +310,7 @@
 
 }
 
-.booking .form-fields-label {
+.form-fields-label {
   font-size: 17px;
   font-weight: 200;
   margin: 0px;
@@ -323,7 +318,7 @@
   padding-bottom: 4px;
 }
 
-.booking .form-fields-label-small {
+.form-fields-label-small {
   font-weight: 600;
   margin: 0px;
   word-wrap: break-word;
@@ -335,12 +330,12 @@
   color: #484848;
 }
 
-.booking .form-fields-spacing-dates {
+.form-fields-spacing-dates {
   margin-top: 16px;
   margin-bottom: 8px;
 }
 
-.booking .form-fields-spacing-guests {
+.form-fields-spacing-guests {
   margin-bottom: 16px;
 }
 
@@ -355,17 +350,92 @@
 ---------------- DATES FIELD CALENDAR BUTTONS ----------------
 */
 
-.calendar-container {
+.calendar-outer-container {
   font-weight: 600;
-  position: relative;
-  width: 100%;
 }
+
+.calendar-inner-container {
+  position: relative;
+  display: block;
+}
+
+.DateInput {
+  padding: 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.DateInput.DateInput_1 {
+    white-space: nowrap;
+    padding: 0px 6px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.DateInput_input.DateInput_input_1.DateInput_input__focused.DateInput_input__focused_2 {
+  white-space: nowrap;
+  color: rgb(0, 122, 135);
+  padding: 0px 6px;
+  overflow: hidden;
+  background: rgb(153, 237, 230);
+  border-color: rgb(153, 237, 230);
+  border-radius: 3px;
+}
+
+.DateInput_input.DateInput_input_1.DateInput_input__focused.DateInput_input__focused_2 text {
+  color: rgb(0, 122, 135);
+}
+
+.DateInput .DateInput_1 {
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 24px;
+  color: #757575;
+  margin: 0px;
+  padding: 0 6px;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+  width: -webkit-calc(50% - 12px);
+  width: -moz-calc(50% - 12px);
+  width: calc(50% - 12px);
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.DateInput_input {
+  font-weight: 200;
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background-color: #fff;
+  width: 100%;
+  padding: 11px 11px 9px;
+  border: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 2px solid transparent;
+  border-left: 0;
+  border-radius: 0;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em;
+  font: 400 11px system-ui;
+}
+
 
 /*
 ---------------- GUESTS FIELD  ----------------
 */
 
-.booking .guests-field-container {
+.guests-field-container {
   margin-bottom: 16px;
 }
 
@@ -373,21 +443,21 @@
 
 /*<small> text, --> .form-fields-label-small */
 
-.booking .guest-picker-container {
+.guest-picker-container {
   position: relative;
 }
 
-.booking .guest-picker-trigger-container {
+.guest-picker-trigger-container {
   width: 100%;
   position: relative;
 }
 
-.booking .guest-picker-trigger-content-spacing {
+.guest-picker-trigger-content-spacing {
   margin-left: 8px;
   margin-right: 8px;
 }
 
-.booking .guest-picker-trigger-selected {
+.guest-picker-trigger-selected {
   text-align: left;
   line-height: normal;
   display: block;
@@ -402,7 +472,7 @@
   border-bottom: 2px solid rgb(0, 132, 137);
 }
 
-.booking .guest-picker-trigger-not-selected {
+.guest-picker-trigger-not-selected {
   background: #ffffff;
   text-align: left;
   border-radius: 2px;
@@ -413,7 +483,7 @@
   border: 1px solid #DBDBDB;
 }
 
-.booking .guest-picker-flexbar-container {
+.guest-picker-flexbar-container {
   margin: 0px;
   word-wrap: break-word;
   font-size: 16px;
@@ -425,27 +495,27 @@
   font-weight: normal;
 }
 
-.booking .icon-chevron {
+.icon-chevron {
   height: 16px;
   width: 16px;
   display: block;
   fill: currentcolor
 }
 
-.booking .guest-label {
+.guest-label {
     white-space: nowrap;
     margin-right: 1em;
     overflow: hidden;
 }
 
-.booking .guest-label-text {
+.guest-label-text {
     display: inline-block;
     font-size: 17px;
     margin: 0;
     padding: 0;
 }
 
-.booking .text-highlight {
+.text-highlight {
   background-color: #99ede6;
   border-color: #99ede6;
   -webkit-border-radius: 3px;
@@ -456,7 +526,7 @@
   padding: 0.25em 0.5em;
 }
 
-.booking .guest-count-filter-container {
+.guest-count-filter-container {
     position: absolute;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
     width: 100%;
@@ -475,7 +545,7 @@
 
 */
 
-.booking .button-guest-select {
+.button-guest-select {
   display: inline-block;
   cursor: pointer;
   text-align: center;
@@ -492,18 +562,18 @@
   outline: none;
 }
 
-.booking .button-guest-select:active {
+.button-guest-select:active {
   box-shadow: rgb(0, 132, 137) 0px 0px 2px 2px;
 }
 
-.booking .button-guest-select:disabled {
+.button-guest-select:disabled {
   cursor: default;
   border-color: rgba(0, 132, 137, 0.3);
   background: transparent;
   box-shadow: none;
 }
 
-.booking .button-guest-select-icon {
+.button-guest-select-icon {
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -513,11 +583,11 @@
   font-size: 16px;
 }
 
-.booking .button-guest-select-icon.disabled {
+.button-guest-select-icon.disabled {
   color: rgba(0, 132, 137, 0.3);
 }
 
-.booking .button-guest-select-svg {
+.button-guest-select-svg {
   height: 1em;
   width: 1em;
   display: block;
@@ -529,7 +599,7 @@
 ---------------- PRICE QUOTE FORM ----------------
 */
 
-.booking .price-quote-form-container {
+.price-quote-form-container {
   margin-bottom: 8;
 }
 
@@ -540,11 +610,11 @@
 ---------------- BOOKING FOOTER SECTION ----------------
 */
 
-.booking .footer-button-spacing {
+.footer-button-spacing {
   margin-top: 24px;
 }
 
-.booking .booking-button {
+.booking-button {
   cursor: pointer;
   display: inline-block;
   margin: 0px;
@@ -578,7 +648,7 @@
   color: #ffffff;
 }
 
-.booking .booking-button-text {
+.booking-button-text {
     margin: 0px;
     word-wrap: break-word;
     font-size: 16px;
@@ -590,7 +660,7 @@
     color: #ffffff;
 }
 
-.booking .booking-charge-text-spacing {
+.booking-charge-text-spacing {
   margin-top: 8px;
 }
 

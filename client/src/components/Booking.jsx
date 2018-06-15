@@ -102,8 +102,8 @@ class Booking extends Component {
   render() {
     if (this.state.bookings && this.state.listing && this.state.owner && this.state.reviews) {
       return (
-        <div className="booking">
-          <div className="booking-container-html booking-container-body">
+        <div className="position-booking">
+          <div className="container-booking">
             <div className="booking-parent-spacing">
               <div className="booking-header-parent">
                 <BookingHeader listing={this.state.listing} reviews={this.state.reviews} />
