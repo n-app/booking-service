@@ -102,9 +102,13 @@ class Booking extends Component {
   }
 
   onSubmit() {
-    if (!this.state.selectedStartDate || !this.state.selectedStartDate) {
+    if (!this.state.selectedStartDate) {
       this.setState({
         focusedDateInput: 'startDate',
+      });
+    } else if (!this.state.selectedEndDate) {
+      this.setState({
+        focusedDateInput: 'endDate',
       });
     } else {
       this.onSubmitTripDetailsWithDates();
