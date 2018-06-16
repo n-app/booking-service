@@ -1,9 +1,12 @@
 import React from 'react';
 
-const BookingFooter = ({ isFetchingPricingQuote }) => (
+const BookingFooter = ({ isFetchingPricingQuote, onSubmit }) => (
   isFetchingPricingQuote ? (
     <div>
-      <button className="booking-button">
+      <button
+        className="booking-button"
+        onClick={onSubmit}
+      >
         <span className="booking-button-text">Book</span>
       </button>
       <div className="booking-charge-text-spacing">
@@ -16,7 +19,10 @@ const BookingFooter = ({ isFetchingPricingQuote }) => (
     </div>
   ) : (
     <div>
-      <button className="booking-button">
+      <button
+        className="booking-button"
+        onClick={onSubmit}
+      >
         <span className="booking-button-text">Request to Book</span>
       </button>
       <div className="booking-charge-text-spacing">

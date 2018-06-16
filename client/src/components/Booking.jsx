@@ -12,6 +12,11 @@ import PricingQuote from './booking-form/pricing-quote/PricingQuote';
 
 const moment = extendMoment(Moment);
 
+const PRICE_PRESETS = {
+  serviceFee: 3,
+  multiple: 0.075,
+};
+
 class Booking extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +39,9 @@ class Booking extends Component {
     this.onGuestPickerFocus = this.onGuestPickerFocus.bind(this);
     this.onGuestDetailsUpdate = this.onGuestDetailsUpdate.bind(this);
     this.setTripDates = this.setTripDates.bind(this);
+    this.handleFocusChange = this.handleFocusChange.bind(this);
     this.setTripDetailsFormRef = this.setTripDetailsFormRef.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -53,14 +60,9 @@ class Booking extends Component {
     });
   }
 
-  setTripDates(startDate, endDate) {
+  handleFocusChange(focusedInput) {
     this.setState({
-      selectedStartDate: startDate || null,
-      selectedEndDate: endDate || null,
-    }, () => {
-      if (this.state.selectedStartDate && this.state.selectedEndDate) {
-        this.setTripDetailsFormRef(this.state.selectedStartDate, this.state.selectedEndDate);
-      }
+      focusedDateInput: focusedInput,
     });
   }
 
@@ -99,6 +101,55 @@ class Booking extends Component {
       });
   }
 
+  onSubmit() {
+    if (!this.state.selectedStartDate || !this.state.selectedStartDate) {
+      this.setState({
+        focusedDateInput: 'startDate',
+      });
+    } else {
+      this.onSubmitTripDetailsWithDates();
+    }
+  }
+
+  onSubmitTripDetailsWithDates() {
+    const { price, cleaningFee, areaTax, id } = this.state.listing;
+    const { ownerName } = this.state.owner;
+    const tripDuration = this.state.tripDuration;
+    const tripStart = this.state.selectedStartDate.format('YYYY-MM-DD');
+    const tripEnd = this.state.selectedEndDate.format('YYYY-MM-DD');
+    const tripCost = (tripDuration * price) + cleaningFee + (Math.floor(PRICE_PRESETS.serviceFee * price * PRICE_PRESETS.multiple)) + areaTax;
+    const tripDetails = {
+      listingID: id,
+      ownerName,
+      checkIn: tripStart,
+      checkOut: tripEnd,
+      guestDetails: this.state.guestDetails,
+      cost: tripCost,
+    };
+    this.checkoutWithTripDetails(tripDetails);
+  }
+
+  setTripDates(startDate, endDate) {
+    this.setState({
+      selectedStartDate: startDate || null,
+      selectedEndDate: endDate || null,
+    }, () => {
+      if (this.state.selectedStartDate && this.state.selectedEndDate) {
+        this.setTripDetailsFormRef(this.state.selectedStartDate, this.state.selectedEndDate);
+      }
+    });
+  }
+
+  checkoutWithTripDetails(tripDetails) {
+    axios.post('/booking', tripDetails)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     if (this.state.bookings && this.state.listing && this.state.owner && this.state.reviews) {
       return (
@@ -119,6 +170,8 @@ class Booking extends Component {
                       </div>
                       <BookingCalendar
                         bookings={this.state.bookings}
+                        handleFocusChange={this.handleFocusChange}
+                        focusedDateInput={this.state.focusedDateInput}
                         bookedDates={this.state.bookings.map((range) => {
                           const booked = [];
                           booked.push(range.startDate);
@@ -158,6 +211,7 @@ class Booking extends Component {
                 <div className="footer-button-spacing">
                   <BookingFooter
                     isFetchingPricingQuote={this.state.isFetchingPricingQuote}
+                    onSubmit={this.onSubmit}
                   />
                 </div>
               </div>
