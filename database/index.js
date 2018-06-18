@@ -82,7 +82,6 @@ const queryAllDbTablesByRoomId = (id, callback) => {
   const trackQueryHelper = (error, data, name) => {
     queriesComplete += 1;
     if (error) {
-      //will need to send responses here?
       debug(`error reading from database, step: ${queriesComplete}, error: ${error}`);
       errorLog.push({ name, error });
     } else {
@@ -91,7 +90,6 @@ const queryAllDbTablesByRoomId = (id, callback) => {
 
     if (queriesComplete === READ_DB_OPERATIONS) {
       if (errorLog.length === READ_DB_OPERATIONS) {
-        //need to find a better way of handling errors
         callback(errorLog, null);
       } else {
         roomRecords.errors = errorLog;
