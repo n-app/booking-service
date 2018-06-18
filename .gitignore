@@ -26,3 +26,5 @@ dist/
 main.js
 main.css
 
+# config files
+config/

@@ -176,12 +176,7 @@ class Booking extends Component {
                         bookings={this.state.bookings}
                         handleFocusChange={this.handleFocusChange}
                         focusedDateInput={this.state.focusedDateInput}
-                        bookedDates={this.state.bookings.map((range) => {
-                          const booked = [];
-                          booked.push(range.startDate);
-                          booked.push(range.endDate);
-                          return booked;
-                        })}
+                        bookedDates={this.state.bookings.map(b => moment.range(b.startDate, b.endDate))}
                         setTripDates={this.setTripDates}
                       />
                     </div>
