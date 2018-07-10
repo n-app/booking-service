@@ -1,4 +1,9 @@
-use nappbooking;
+
+DROP DATABASE IF EXISTS booking_service;
+
+CREATE DATABASE booking_service;
+
+use booking_service;
 
 DROP TABLE IF EXISTS users;
 
